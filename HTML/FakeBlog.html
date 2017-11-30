@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Vector Arithmetic Post</title>
+        <meta name="description" content="This blog post describes the process of
+        adding or subtracting vectors.  The complete site provides information on
+        other subjects including 3d math, graphics, and rendering.">
+        <style>
+        table {
+            width:auto;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid;
+            padding: 1px;
+        }
+        td, th {
+            border: 1px solid;
+            text-align: center;
+            pading: 1px;
+        }
+        img {
+            width:100%;
+        }
+        h1{
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+
+    <!-- Content -->
+    <h1>Vector Arithmetic</h1>
+    <div>
+        <p>A vector is made of either two or three components, denoted as x and y,
+            or x, y, and z.  When you add or subtract two vectors, you get a new
+            vector as the answer.  The components of one vector is added or
+            subtracted from the components of the other vector resulting in a new
+            vector.</p>
+        <img src="VectorArithmetic.jpg" alt="VectorArithmeticDiagram.jpg">
+    </div>
+
+    <!-- Table -->
+    <div>
+        <p>The following table shows Vector A and Vector B added together resulting
+            in Vector C.  Simply add the x components of Vector A and B to get the
+            x comonent of C, same for the y components.<p>
+        <table>
+        <thead>
+            <tr>
+                <th>Vector</th>
+                <th>X</th>
+                <th>Y</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Vector A</td>
+                <td>5</td>
+                <td>-3</td>
+            </tr>
+            <tr>
+                <td>Vector B</td>
+                <td>4</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Vector C</td>
+                <td>9</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <!-- More Information -->
+    <div>
+        <p>For more information, check out the following posts:</p>
+        <ul>
+            <li><a href="SceneCamera.html">Scene Camera</a></li>
+            <li><a href="Quaternions.html">Quaternions</a></li>
+            <li><a href="PerpectiveMatrix.html">Perspective Matrix</a></li>
+            <li><a href="Shading.html">Shading</a></li>
+        </ul>
+    </div>
+
+    <!-- Form -->
+    <hr>
+    <div>
+        <form>
+            <h3>Suscribe to our mailing list to stay up-to-date</h3>
+            <label for="Email_Address">Email Address:</label>
+            <input type="text" id="Email_Address" name="Email_Address">
+            <p>How often would you like to receive communication?</p>
+            <label for="Daily">Daily</label>
+            <input type="radio" id="Daily" name="Frequency" value="Daily">
+            <label for="Weekly">Weekly</label>
+            <input type="radio" id="Weekly" name="Frequency" value="Weekly">
+            <label for="Monthly">Monthly</label>
+            <input type="radio"  id="Monthly" name="Frequency" value="Monthly">
+            <p>Select which subjects you are interested in:</p>
+            <input type="checkbox" name="Subject" value="Mathematics">Mathematics<br>
+            <input type="checkbox" name="Subject" value="3D Graphics">3D Graphics<br>
+            <input type="checkbox" name="Subject" value="Animation">Animation<br>
+            <input type="checkbox" name="Subject" value="Scripting">Scripting"<br><br>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+    </body>
+</html>

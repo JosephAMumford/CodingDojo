@@ -1,1 +1,1 @@
-"# CodingDojo" 
+Coding Dojo Assignments and notes

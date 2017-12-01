@@ -1,3 +1,130 @@
-p {
-    color: red;
+#wrapper {
+    background: rgb(41, 23, 35);
+    background: radial-gradient(rgb(97, 54, 83),rgb(41, 23, 35));
+    width: 970px;
+    margin: auto;
+    padding: 10px, 10px, 10px, 15px;
+}
+
+#header {
+    background: white;
+    margin: 0px;
+    padding: 0px;
+}
+
+#header h1 {
+    display: inline-block;
+    margin: 5px;
+    padding: 0px;
+    font-family: Comic Sans MS;
+}
+
+#header h2 {
+    display: inline-block;
+    margin: 0px 5px 0px 400px;
+    padding: 0px;
+}
+
+#portrait {
+    border: 5px solid grey;
+    border-radius: 4px;
+    width: 420px;
+    vertical-align: top;
+    margin: 10px;
+}
+
+#aboutContent {
+    background: linear-gradient(to right, white, rgb(255, 230, 242));
+    display: inline-block;
+    width: 480px;
+    vertical-align: top;
+    margin: 10px 10px 10px 10px;
+    font-size: 14pt;
+}
+
+#aboutContent p {
+    margin: 10px;
+}
+
+.title {
+    background: linear-gradient(lightgray,gray,lightgray);
+    color: white;
+    margin: 0px 0px 10px 0px;
+    padding: 5px;
+}
+
+.toBottom {
+    position: relative;
+}
+
+.example {
+    display: inline-block;
+    width: 310px;
+    height: 620px;
+    background: linear-gradient(to right, white, rgb(255, 230, 242));
+    vertical-align: top;
+    margin: 10px 5px;
+}
+
+.example p {
+    margin: 10px 5px 10px 5px;
+    text-align: justify;
+    font-size: 13pt;
+}
+
+.exImg {
+    width: 310px;
+}
+
+.exLink {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.exButton {
+    display: block;
+    background-color: darkgreen;
+    border-color: rgb(1, 66, 1);
+    border-radius: 6px;
+    box-shadow: 4px 4px 4px grey;
+    color: white;
+    margin: 0px auto;
+    text-decoration: none;
+}
+
+.techImg {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.contImg {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+    top: 6px;
+}
+
+.mainLink {
+    font-size: 13pt;
+    color: darkblue;
+    text-decoration: none;
+}
+
+a.contLink {
+    font-size: 13pt;
+    margin: 0px 4px 0px 4px;
+}
+a.contLink:link{
+    color: darkblue;
+}
+
+#footer {
+    background: white;
+    margin: 10px 0px 0px 0px;
+    text-align: center;
 }

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Internet</title>
+        <meta charset="utf-8">
+        <meta name="description" content="This page describes the basics of how
+        the internet works, using HTML and CSS">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <img class="logo" src="images/globe.png" alt="globe.png"> 
+                <h1>The Inter<span style="color:rgb(38,102,156)">net</span></h1>
+                <div class="banner">
+                    <h2>The World Wide Web</h2>
+                </div>
+            </div>
+            <div id="main">
+                <div id="sideBar">
+                    <h3>So, what's an <span style="color:rgb(215,38,38)">Internet?</span></h3>
+                    <br>
+                    <p><b>
+                        An <span style="color: rgb(38,102,156)">Inter</span>connected <span style="color:rgb(38,102,156)">Net</span>work of computers 
+                        all around the world!</b>
+                    </p>
+                    <a class="sideLinkBlue" href="video.html">WATCH A VIDEO</a>
+                    <a class="sideLinkOrange" href="resources.html">MORE RESOURCES</a>
+                    <hr>
+                    <div class="ad">
+                        <img class="adBack" src="images/ad_background.png" alt="adBackground.png">
+                        <p>
+                            Reinvent your career in just 14 weeks
+                        </p>
+                        <img class="adFore" src="images/ninja.png" alt="ninja.png">
+                        <a class="adLink" href="learnMore.html">Learn More >>></a>
+                    </div>
+                </div>
+                <div id="content">
+                    <img class="dnsIcon" src="images/home.png" alt="home.png">
+                    <a class="dnsLink" href="dns.html">DNS</a>
+                    <div class="info">
+                        <img class="infoIcon" src="images/phone.png" alt="phone.png">
+                        <h6>Mon - Fri 9 a.m. - 5 p.m. (EST)</h6>
+                        <h2>855-967-3787</h2>
+                        <h6>International +1.617.963.0555</h6>
+                    </div>    
+                    <hr>
+                    <h3>Clients and Servers</h3>
+                    <p>
+                        Computers connected to the <span style="color: rgb(2,151,173)">Web </span>are called <b>clients</b> and <b>servers</b>.
+                    </p>
+                    <ul>
+                        <li>
+                            <p>
+                                <span style="color: rgb(2,151,173)">Clients</span> are the typical Web user's Internet-connected deviecs
+                                (for example, your computer connected to your Wi-Fi, or phone 
+                                connected to your mobile network) and <span style="color: rgb(2,151,173)">Web-accessing software</span>
+                                available on those devices (usually a web broswer lie Firefox
+                                or Chrome).
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Servers are computers that store <span style="color: rgb(2,151,173)">webpages</span>, 
+                                <span style="color: rgb(2,151,173)">sites</span>, or <span style="color: rgb(2,151,173)">apps</span>.  When a 
+                                client device wanters to acccess a webpage, a copy of the webpage is downloaded from the server onto the 
+                                client machine to be displayed in the user's browser.
+                            </p>
+                        </li>
+                    </ul>
+                    <img class="contentPicture" src="images/client_server.jpg" alt="clientServer.jpg">
+                    <h3>So What Actually Happens?</h3>
+                    <ol>
+                        <li>
+                            <p>
+                                The browser goes to the <span style="color: rgb(2,151,173)">DNS server</span> and finds the real address of the
+                                <span style="color: rgb(2,151,173)">server</span> that the website lives on.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The browser sends and <span style="color: rgb(2,151,173)">HTTP request</span> message to the server asking it to
+                                senda copy of the website to the client.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                If the server approves the client's request, the server sends the client 
+                                a <span style="color: rgb(2,151,173)">"200 OK" message</span>, which means "Permission granted!  Here you go!", and
+                                then starts sending the website's files to the browser in a series of
+                                small chunks.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The browser assembles the small chunks into a complete website and displays
+                                it to you!
+                            </p>
+                        </li>
+                    </ol>
+                    <div class="techBox">
+                        <img src="images/html.png" alt="html.png">
+                        <div class="techText">
+                            <h3>The Big 3 - HTML, CSS, and JavaScript</h3>
+                            <p>
+                                While the server can process information in many different languages, the files 
+                                that they serve to the client are always going to be sine combination of HTML,
+                                CSS, and Javascript!
+                            </p>
+                            <p>
+                                Learn more about the Big 3 <a class="techLink" href="bigThree.html">here</a>!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,246 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#wrapper {
+    background-color: rgb(248, 248, 248);
+    width: 970px;
+    margin: 0px auto;
+}
+
+#header {
+    background-color: white;
+    height: 104px;
+}
+    .logo {
+        width: 64px;
+        height: 64px;
+        display: inline-block;
+        position: absolute;
+    }
+
+    #header h1 {
+        display: inline-block;
+        margin-top: 20px;
+        margin-left: 60px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #header h2 {
+        padding: 10px 5px;
+        color: white;
+    }
+
+    .banner {
+        background: linear-gradient(rgb(46, 107, 158), rgb(83,132,171),rgb(46, 107, 158));
+        height: 48px;
+        width: 970px;
+        display: inline-block;        
+    }
+
+#main {
+    background: linear-gradient(rgb(248, 248, 248), white);
+    margin:0px auto;
+}
+
+#sideBar {
+    height: 750px;
+    width: 200px;
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+    padding: 4px;
+}
+
+    #sideBar h3 {
+        font-size: 13pt;
+    }
+
+    .sideLinkBlue {
+        background: linear-gradient(rgb(100,153,193), rgb(42,105,158));
+        border-radius: 5px;
+        box-shadow: 3px 3px 3px grey;
+        color:white;
+        font-size: 12pt;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        display: block;
+        margin: 10px 0px 5px 0px;
+        padding: 8px 8px;
+        text-align: center;
+    }
+
+    .sideLinkOrange {
+        background: linear-gradient(rgb(234,171,92),rgb(238,116,3));
+        border-radius: 5px;
+        box-shadow: 3px 3px 3px grey;
+        color:white;
+        font-size: 12pt;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        display: block;
+        margin: 5px 0px 20px;
+        padding: 8px 8px;
+        text-align: center;
+    }
+
+    .ad {
+        height: 292px;
+        width: 200px;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .ad p {
+        color: white;
+        margin: 20px 10px;
+        position: absolute;
+        font-size: 16pt;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .adBack {
+        width: 200px;
+        position: absolute;
+    }
+
+    .adFore {
+        width: 50%;
+        position: absolute;
+        top: 100px;
+        left: 50px;
+    }
+
+    .adLink {
+        background: linear-gradient(rgb(119,208,222), rgb(20,194,221));
+        border-radius: 5px;
+        border: 1px solid rgb(20,194,221);
+        box-shadow: 3px 3px 3px black;
+        color:white;
+        font-size: 12pt;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        position: absolute;
+        padding: 4px 12px;
+        top: 250px;
+        left: 24px;
+    }
+
+#content {
+    height: 750px;
+    width: 736px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    #content h3 {
+        margin: 5px;
+        color: rgb(38,104,156);
+    }
+
+    #content p {
+        margin: 5px;
+    }
+
+    #content ul {
+        margin: 5px 10px 5px 30px;
+    }
+
+    #content ol {
+        margin: 5px 10px 5px 30px;
+    }
+
+    .dnsLink {
+        color: rgb(2,151,173);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14pt;
+        text-decoration: none;
+        margin: 0px;
+        display: inline-block;
+        position: relative;
+        bottom: 31px;
+        left: 2px;   
+    }
+
+    .dnsIcon {
+        margin: 0px;
+        width: 24px;
+        display: inline-block;
+        position: relative;
+        bottom: 26px;
+        left: 2px; 
+    }
+
+    .info {
+        height: 55px;
+        width: 200px;
+        display: inline-block;  
+        position: relative;
+        top: 0px;
+        left: 460px;
+    }
+
+    .infoIcon {
+        margin: 0px;
+        width: 25%;
+        display: inline-block;
+        position: absolute;
+        top: 2px;
+        right: 160px;
+    }
+
+    .info h6 {
+        text-align: right;
+    }
+
+    .info h2 {
+        text-align: right;
+        color: rgb(0,192,221);
+    }
+
+    .contentPicture {
+        height: 128px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .techBox {
+        height: 144px;
+        width: 720px;
+        display: inline-block;
+        border: 4px solid rgb(0,135,221);
+        margin: 10px 0px 0px 0px;
+        padding: 0px;
+    }
+
+    .techBox img {
+        display: inline-block;
+        width: 128px;
+        height: 128px;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+        top: 8px;
+        left: 8px;
+    }
+
+    .techText {
+        display: inline-block;
+        width: 570px;
+        height: 144px;
+        margin: 0px 0px 0px 10px;
+        padding: 0px; 
+        vertical-align: top;
+    }
+
+    .techLink {
+        color: rgb(2,151,173);
+        text-decoration: none;
+    }

@@ -1,0 +1,88 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#wrapper {
+    background-color: white;
+    width: 1092px;
+    height: 1000px;
+    margin: 0px auto;
+    padding: 10px;
+}
+
+#banner {
+    text-align: center;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(19, 48px);
+    grid-gap: 10px;
+}
+
+    h5 {
+        padding: 16px 8px;
+        text-align: center;
+    }
+    
+    h4 {
+        color: rgb(25,19,162);
+        text-align: center;
+    }
+
+    h6 {
+        text-align: center;
+    }
+
+
+/* Box Styles */
+.clearBox {
+    height: 48px;
+    width: 48px;
+    text-align: center;
+    color: red;
+    display: inline-block;
+}
+
+.blueBox {
+    border: 1px solid grey;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px;
+    height: 48px;
+    width: 48px;
+    background-color: rgb(104,155,255);
+    display: inline-block;
+}
+
+.pinkBox {
+    border: 1px solid grey;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px;
+    height: 48px;
+    width: 48px;
+    background-color: rgb(253,154,152);
+    display: inline-block;
+}
+
+.yellowBox {
+    border: 1px solid grey;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px;
+    height: 48px;
+    width: 48px;
+    background-color: rgb(254,203,0);
+    display: inline-block;
+}
+
+.greenBox {
+    border: 1px solid grey;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px;
+    height: 48px;
+    width: 48px;
+    background-color: rgb(31,202,33);
+    display: inline-block;
+}
+
+

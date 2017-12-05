@@ -1,0 +1,20 @@
+var number1 = 19;
+var number2 = 3.14159265359;
+var number3 = -156;
+var number4 = 100255220;
+var string1 = 'a string of letters.';
+var string2 = "using double quotations.";
+var string3 = "starting to program with JavaScript.";
+var boolean1 = true;
+var boolean2 = false;
+var undefined;
+
+console.log("A postive integer:", number1);
+console.log("A decimal number, pi:", number2);
+console.log("a negative integer:", number3);
+console.log("A bigger number:", number4);
+console.log("A string is just", string1);
+console.log("Strings can be written in two ways, this one is", string2);
+console.log("With this exercise we are", string3);
+console.log("True or false. Programing is fun:", boolean1);
+console.log("True or false.  JavaScript is not fun to use:", boolean2);

@@ -1,0 +1,8 @@
+* {
+    outline: 1px solid magenta;
+}
+
+#wrapper {
+    width: 1000px;
+    margin: 0px auto;
+}

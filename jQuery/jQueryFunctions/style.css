@@ -2,6 +2,7 @@
     /*outline: 1px solid magenta;*/
     padding: 0px;
     margin: 0px;
+    font-family: Calibri, sans-serif;
 }
 
 #wrapper {
@@ -15,7 +16,6 @@
     .header-box {
         position: relative;
         left: 50%;
-        /* bring your own prefixes */
         transform: translate(-50%, 0%);
         margin: 10px;
         padding: 10px 20px;
@@ -23,7 +23,8 @@
         border: 1px solid black;
         border-radius: 5px;
         box-shadow: 3px 3px black;
-        background-color: rgb(55, 105, 55);
+        background-color: rgb(82, 135, 151);
+        color: white;
         text-align: center;
     }
 
@@ -40,16 +41,21 @@
 
     .content-box {
         display: block;
-        height: 170px;
+        height: 132px;
+        margin: 10px 0px;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: rgb(169, 201, 231);
     }
 
     .content-mainbox {
         display: inline-block;
         margin: 10px 10px 10px 5px;
         padding: 10px;
-        width: 694px;
-        height: 128px;
-        background-color: olive;
+        width: 692px;
+        height: 90px;
+        border-radius: 5px;
+        background-color: rgb(182, 216, 248);
         vertical-align: top;
     }
 
@@ -63,24 +69,46 @@
         margin: 10px 5px 10px 10px;
         padding: 10px;
         width: 256px;
-        height: 128px;
-        background-color: greenyellow;
+        height: 90px;
+        border-radius: 5px;
+        background-color: rgb(182, 216, 248);
     }
     .content-button {
         position: relative;
         left: 50%;
         top: 50%;
-        /* bring your own prefixes */
         transform: translate(-50%, -50%);
         padding: 5px 10px;
         display: inline-block;
         border: 1px solid black;
         border-radius: 5px;
         box-shadow: 3px 3px black;
-        background-color: rgb(148, 163, 148);
+        background-color: rgb(82, 135, 151);
+        font-size: 14pt;
+        color: white;
         text-align: center;
     }
 
 #footer {
 
+}
+
+.redText {
+    color: red;
+}
+
+.inlineText {
+    text-align: center;
+    display: inline-block;
+}
+
+.colorText {
+    color: black;
+}
+
+.inputField {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
 }

@@ -2,7 +2,7 @@
 
 <html lang="en">
     <head>
-        <title>Contact Card</title>
+        <title>Coding Dojo Contact Page</title>
         <meta charset="UTF-8">
         <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
         <script src= 'script.js'></script>
@@ -11,10 +11,21 @@
     <body>
         <div id="wrapper">
             <div id="header">
-
+                <h1 id="main-header">Coding Dojo Contact Page</h1>
             </div>
-            <div id="contact">
-                
+            <div id="side-form">
+                <form id=contact-form>
+                    <label class="inputLabel" for="firstName">First Name:</label>
+                    <input id="first-name" class="inputField" type="text" placeholder="First Name">
+                    <label class="inputLabel" for="lastName">Last Name:</label>
+                    <input id="last-name" class="inputField" type="text" placeholder="Last Name">
+                    <label class="inputLabel" for="description">Description:</label>
+                </form>
+                <textarea id="description" class="inputDescription" rows="4" cols="30" name="description" form="contact-form" placeholder="Enter description..."></textarea>
+                <button id="addButton">Add User</button>
+            </div>
+            <div id="contact-cards">
+                <!-- Cards inserted here -->
             </div>
         </div>
     </body>

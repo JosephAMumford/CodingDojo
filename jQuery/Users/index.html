@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Users</title>
+        <meta charset="UTF-8">
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script src= 'script.js'></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <h1>List of Users</h1>
+            </div>
+            <div id="contact">
+                <div id="userTable">
+                    <table class="tableStyle">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email Address</th>
+                                <th>Phone #</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div id="form">
+                    <h2>Add User</h2>
+                    <form class="formBox">
+                        <div class="labelBox">
+                            <label class="formLabel">First Name: </label>
+                            <label class="formLabel">Last Name: </label>
+                            <label class="formLabel">Email Address: </label>
+                            <label class="formLabel">Phone #: </label>
+                        </div>
+                        <div class="inputBox">
+                            <input id="first-name" class="formInput" type="text" placeholder="First Name" name="firstName" >
+                            <input id="last-name" class="formInput" type="text" placeholder="Last Name" name="lastName">
+                            <input id="email-add" class="formInput" type="text" placeholder="Email Address" name="email">
+                            <input id="phone-num" class="formInput" type="text" placeholder="Phone Number" name="number">
+                        </div>
+                        <button class="formButton">Submit User Information</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

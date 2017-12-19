@@ -1,0 +1,105 @@
+* {
+    /*outline: 1px solid magenta;*/
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 1024px;
+    margin: 0px auto;
+}
+
+#header {
+
+}
+    #header h1 {
+        text-align: center;
+    }
+
+#userTable {
+    margin: 20px 0px;
+    border-collapse: collapse;
+}
+.tableStyle {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0%);
+    border-collapse: collapse;
+}
+
+td, th {
+    width: 128px;
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+}
+
+tr:nth-child(even){
+    background-color: lightgray;
+}
+    
+#form {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0%);
+    width: 424px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 3px 3px black;
+    margin: 10px;
+}
+    #form h2 {
+        margin: 5px;
+        text-align: center;
+        text-decoration: underline;
+    }
+.formBox {
+    display: inline-block;
+    padding: 10px;
+    width: 404px;
+}
+    .labelBox {
+        display: inline-block;
+        vertical-align: top;
+        width: 128px;
+        height: 110px;
+    }
+
+    .inputBox {
+        display: inline-block;
+        vertical-align: top;
+        width: 270px;
+    }
+
+    .formLabel {
+        display: block;
+        text-align: right;
+        margin: 5px;
+        height: 21px;
+    }
+
+    .formInput {
+        margin: 3px;
+        width: 256px;
+        
+    }
+
+    .formButton {
+        margin: 10px;
+        padding: 5px 10px;
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, 0%);
+        border: 1px solid black;
+        border-radius: 5px;
+        box-shadow: 3px 3px black;
+        background-color: rgb(100, 100, 100);
+        font-size: 12pt;
+        color: white;
+        text-align: center;
+    }

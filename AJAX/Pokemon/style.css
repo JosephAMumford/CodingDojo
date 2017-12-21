@@ -1,0 +1,35 @@
+* {
+    /*outline: 1px solid magenta;*/
+    margin: 0;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 1000px;
+    margin: 0px auto;
+}
+
+#wrapper h1 {
+    padding: 5px;
+    text-align: center;
+}
+
+.card {
+    display: inline-block;
+    margin: 10px;
+    width: 200px;
+    height: 236px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+    .card h3 {
+        margin: 5px 0px;
+        text-align: center;
+    }
+
+    .card img {
+        width: 200px;
+        height: 200px;
+    }

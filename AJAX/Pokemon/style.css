@@ -10,10 +10,9 @@
     margin: 0px auto;
 }
 
-#wrapper h1 {
-    padding: 5px;
-    text-align: center;
-}
+    #wrapper h1 {
+        text-align: center;
+    }
 
 .card {
     display: inline-block;
@@ -23,12 +22,6 @@
     border-radius: 5px;
     border: 1px solid black;
 }
-
-    .card h3 {
-        margin: 5px 0px;
-        text-align: center;
-    }
-
     .card img {
         width: 200px;
         height: 200px;

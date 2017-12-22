@@ -10,13 +10,9 @@ $(document).ready(function(){
 
     function GetPokemon(id){
         id = id.toString();
-        var url = 'https://pokeapi.co/api/v2/pokemon/' + id;
-        $.get(url, function(data){
             var str = '<div class="card">' +
-                '<h3>' + data.name + '</h3>' +
-                '<img src="https://pokeapi.co/media/sprites/pokemon/' + id + '.png" alt="pokemon.png">' +
+                '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/' + id + '.png" alt="pokemon.png">' +
                 '</div>';
-            $('#wrapper').append(str);
-        });
+        $('#wrapper').append(str);
     }
 });

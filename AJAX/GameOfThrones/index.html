@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Game of Thrones</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="House information for Game of Thrones">
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script src= 'script.js'></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <h1>Houses of Westeros</h1>
+                <h2>Click on each house for more information</h2>
+            </div>
+            <div id="selection-area">
+                <button class="scroll-button"><img class="arrow-img" dir="0" src="leftArrow.png" alt="arrow.png"></button>
+                <img class="house-img" pId="0" src="" alt="houseSigil.png">
+                <img class="house-img" pId="1" src="" alt="houseSigil.png">
+                <img class="house-img" pId="2" src="" alt="houseSigil.png">
+                <img class="house-img" pId="3" src="" alt="houseSigil.png">
+                <button class="scroll-button"><img class="arrow-img" dir="1" src="rightArrow.png" alt="arrow.png"></button>
+            </div>
+            <div id="info-area">
+                <h3>House Details</h3>
+                <h4 id="info-name">Name:</h4>
+                <h4 id="info-words">Words:</h4>
+                <h4 id="info-titles">Titles:</h4>
+            </div>
+        </div>
+    </body>
+</html>

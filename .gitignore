@@ -1,8 +1,8 @@
 Python/MyEnviornments/*
-Python/AJAX/*
-Python/CSS/*
-Python/HTML/*
-Python/JavaScript/*
-Python/jQuery/*
-Python/Templates/*
+AJAX/*
+CSS/*
+HTML/*
+JavaScript/*
+jQuery/*
+Templates/*
 .vscode/*

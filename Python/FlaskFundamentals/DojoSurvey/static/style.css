@@ -1,19 +1,35 @@
 * {
-    outline: 1px solid magenta;
     font-family: sans-serif;
 }
 
 #wrapper {
-    width: 800px;
+    width: 400px;
     margin: 0px auto;
+    text-align: center;
 }
 
 #form {
     padding: 10px;
     width: 275px;
     display: inline-block;
+    border: 1px solid black;
+    text-align: left;
 }
 
     .form-item {
         margin: 5px;
     }
+
+    .button {
+        padding: 5px;
+        margin: 10px 10px;
+        border: 1px solid black;
+        border-radius: 4px;
+        background-color: skyblue;
+        color: white;
+        text-decoration: none;
+    }
+
+#info-block {
+    border: 1px solid black;
+}

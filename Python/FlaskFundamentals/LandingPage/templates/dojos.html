@@ -1,0 +1,18 @@
+<html lang="en">
+    <head>
+      <title>Dojos</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Create a new Ninja</h1>
+            <form id="myForm" action='', method='post'>               
+                Ninja Name: <input type='text' name='name'><br>
+                Prefecture of Origin: <input type='text' name='origin'><br>
+                Specialty: <input type='text' name='specialty'><br>
+                <input type='submit' value='Create Ninja'>
+            </form>
+        </div>
+    </body>
+</html>

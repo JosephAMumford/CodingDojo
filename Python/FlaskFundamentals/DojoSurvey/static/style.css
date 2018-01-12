@@ -1,0 +1,19 @@
+* {
+    outline: 1px solid magenta;
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 800px;
+    margin: 0px auto;
+}
+
+#form {
+    padding: 10px;
+    width: 275px;
+    display: inline-block;
+}
+
+    .form-item {
+        margin: 5px;
+    }

@@ -1,0 +1,29 @@
+* {
+    font-family: sans-serif;
+}
+#wrapper {
+    width: 800px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+
+#list {
+    display: inline-block;
+    width: 600px;
+    text-align: left;
+}
+.mylist {
+    list-style-position: inside;
+}
+
+#myForm {
+    display: inline-block;
+    margin: 10px;
+    text-align: left;
+    width: 500px;
+}
+
+    #myForm input {
+        margin: 10px;
+    }

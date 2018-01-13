@@ -1,0 +1,20 @@
+<html lang="en">
+    <head>
+      <title>Color Picker</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <body style="background-color: {{page_color}}">
+        <div id="wrapper" >
+            <h1>Color Picker</h1>
+            <div id="form">
+                <form action="/" method="POST">
+                    Red  : <input type='text' name='red' placeholder="1-255">
+                    Green: <input type='text' name='green' placeholder="1-255">
+                    Blue : <input type='text' name='blue' placeholder="1-255">
+                    <p style='color: red'>* All values must be between 1 and 255</p>
+                    <input type='submit' value='Submit' class="button">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

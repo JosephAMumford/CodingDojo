@@ -1,0 +1,19 @@
+* {
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 800px;
+    margin: 0px auto;
+    text-align: center;
+}
+#form {
+    width: 250px;
+    margin: 0px auto;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#form input {
+    margin: 10px;
+}

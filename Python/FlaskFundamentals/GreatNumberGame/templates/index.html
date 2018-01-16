@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Great Number Game</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2>Welcome to the Great Number Game</h2>
+            <h4>I am thinking of a number between 1 and 100</h4>
+            <!--  Uncomment this to show hidden info for debugging
+            <h4>Random Number: {{ session['random_number'] }}</h4>
+            <h4>User Guess: {{ session['user_guess'] }}</h4>
+            -->
+            <h4>Take a guess.  Number of guesses: {{ session['number_of_guesses'] }}</h4>
+            <h4>Guesses so far: {{session['current_guesses'] }} </h4>
+            {% if session['state'] != 'won' %}
+                {% if session['state'] == 'low' %}
+                    <div class="red-box">
+                        <h2>Too low!</h2>
+                    </div>
+                {% endif %}
+                {% if session['state'] == 'high' %}
+                    <div class="red-box">
+                        <h2>Too high!</h2>
+                    </div>
+                {% endif %}
+                <form class="guess-form" action="/process" method="POST">
+                    <input type="text" name="user_guess" placeholder="Enter guess...">
+                    <input type="submit" value="Submit">
+                </form>
+            {% endif %}
+            {% if session['state'] == 'won' %}
+                <div class="green-box">
+                    <h2>You won!</h2>
+                    <form action='/reset' method="POST">
+                        <input type="submit" value="Play Again">
+                    </form>
+                </div>
+            {% endif%}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+* {
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 822px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+#chest {
+    margin: 10px;
+    width: 182px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: gold;
+    padding: 0px 10px;
+}
+
+    #chest p {
+        display: inline-block;
+    }
+
+    .gold-box {
+        width: 100px;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: rgb(255, 241, 163);
+        text-align: right;
+    }
+
+#locations {
+
+}
+
+    .location-box {
+        display: inline-block;
+        margin: 10px;
+        vertical-align: top;
+        width: 180px;
+        height: 180px;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: skyblue;
+        text-align: center;
+    }
+
+    .submit-button {
+        border: 1px solid black;
+        border-radius: 3px;
+        padding: 5px;
+    }
+
+#activities {
+    width: 800px;
+    text-align: left;
+    padding: 0px 10px;
+}
+    .activity-box {
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+
+    .log-true {
+        padding: 5px;
+        margin: 0px 10px;
+    }
+
+    .log-false {
+        color: red;
+        padding: 5px;
+        margin: 0px 10px;
+    }
+
+    .reset-button {
+        border: 1px solid black;
+        border-radius: 3px;
+        margin: 10px;
+    }

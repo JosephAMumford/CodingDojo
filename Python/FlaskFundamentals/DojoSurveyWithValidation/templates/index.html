@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Dojo Survey With Validation</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h3>Enter your name, hit the submit button and watch your name print to the console</h3>
+            <div id="form">
+                <form id="myForm" action='/process', method='post'>               
+                    Your Name: <input class="form-item" type='text' name='name'><br>
+                    Dojo Location: <select class="form-item" name="location">
+                        <option value="Silicon Valley">Silicon Valley</option>
+                        <option value="Seattle">Seattle</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                        <option value="Dallas">Dallas</option>
+                        <option value="Tulsa">Tulsa</option>
+                        <option value="Chicago">Chicago</option>
+                        <option value="Washington DC">Washington DC</option>
+                    </select>
+                    Favorite Language:<select class="form-item" name="language">
+                        <option value="Python">Python</option>
+                        <option value="Javascript">JavaScript</option>
+                        <option value="Ruby">Ruby</option>
+                        <option value="C#">C#</option>
+                        <option value="C++">C++</option>
+                    </select>
+                    Comment:<textarea class="form-item" name="comment" rows="10" cols="30"></textarea>
+                    <input type='submit' value='Submit' class="button">
+                </form>
+            </div>
+            <div id="messages">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            {{message}}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>       
+        </div>
+    </body>
+</html>

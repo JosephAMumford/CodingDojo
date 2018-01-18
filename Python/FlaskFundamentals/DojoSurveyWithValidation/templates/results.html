@@ -1,0 +1,26 @@
+<html lang="en">
+    <head>
+      <title>Survey Results</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <body>
+        <div id="wrapper">   
+            <div id="info-block">
+                <h1>Submitted Info</h1>
+                <p>
+                    Name: {{ session['name'] }}
+                </p>
+                <p>
+                    Dojo Location: {{ session['location'] }}
+                </p>
+                <p>
+                    Favorite Language: {{ session['language'] }}
+                </p>
+                <p>
+                    Comment: {{ session['comment'] }}
+                </p>
+                <a href="{{ url_for('index') }}" class="button">go back</a><br><br>
+            </div>
+        </div>
+    </body>
+</html>

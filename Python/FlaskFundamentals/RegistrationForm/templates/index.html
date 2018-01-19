@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Registration Form</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h3>Provide the following information to register.  All fields required.</h3>
+            <div id="form">
+                <form id="myForm" action='/process', method='post'>
+                    <div class="form-item">
+                        <label class="label-item">First Name: </label>
+                        <input class="input-item" type='text' name='first_name'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Last Name:</label>
+                        <input class="input-item" type='text' name='last_name'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Email Address:</label>
+                        <input class="input-item" type='text' name='email'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Birthdate:</label>
+                        <input class="input-item" type='text' name='birthdate' placeholder="mm/dd/yyyy">
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Password:</label>
+                        <input class="input-item" type='password' name='password'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Confirm Password:</label>
+                        <input class="input-item" type='password' name='confirm_password'>
+                    </div>      
+                    <input type='submit' value='Submit' class="button">
+                </form>
+            </div>
+            <div id="messages">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            {{message}}<br>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+            </div>       
+        </div>
+    </body>
+</html>

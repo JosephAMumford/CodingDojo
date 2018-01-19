@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Success Page</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2>Congratulations {{ session['first_name']}}, your information was submitted successfully</h2>
+        </div>
+    </body>
+</html>

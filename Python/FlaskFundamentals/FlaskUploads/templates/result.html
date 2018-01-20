@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Flask Uploads</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            {% if success == True: %}
+                <p id="upload-success">Your file was successfully uploaded</p>
+            {% endif %}
+            {% if success == False: %}
+                <p id="upload-failure">Your upload has failed. Plesae try again.</p>
+            {% endif %}
+        </div>
+    </body>
+</html>

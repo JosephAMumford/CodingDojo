@@ -1,0 +1,55 @@
+USE twitter;
+
+
+-- Get all users
+
+SELECT * FROM  users;
+						
+
+
+-- Get users that signed up prior to 2010
+
+SELECT * FROM users
+
+WHERE users.created_at < '20100101';	
+	
+
+
+-- Get number of tweets for each user
+
+SELECT users.handle AS User, COUNT(tweets.id) AS Tweets 
+
+FROM users
+LEFT JOIN tweets ON users.id = tweets.user_id
+
+GROUP BY users.handle;
+
+
+
+-- Get number of faves for each uses
+
+SELECT users.handle AS User, COUNT(faves.id) AS Faves
+
+FROM users
+LEFT JOIN faves ON users.id = faves.user_id
+
+GROUP BY users.handle;
+
+
+
+-- Get number of followers for each users
+
+SELECT users.handle AS user, COUNT(follows.id) AS Followers
+
+FROM users
+LEFT JOIN follows ON users.id = follows.followed_id
+
+GROUP BY users.handle;
+
+
+
+-- Add new user to table
+
+INSERT INTO users (first_name, last_name, handle, birthday, created_at, updated_at)
+
+VALUE("Joseph", "Mumford", "JAM", STR_TO_DATE('06/14/1982', '%m/%d/%Y'), NOW(), NOW());

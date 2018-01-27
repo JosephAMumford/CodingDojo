@@ -1,0 +1,42 @@
+* {
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 600px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#messages {
+    margin: 20px;
+    color: white;
+    background-color: red;
+    font-weight: 200;
+}
+
+#my-form {
+    display: inline-block;
+    position: relative;
+
+}
+
+#input-item {
+    width: 300px;
+    margin: 10px;
+}

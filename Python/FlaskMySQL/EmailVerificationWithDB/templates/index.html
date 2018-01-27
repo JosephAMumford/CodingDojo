@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Email Verification With Database</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2>Enter your email address to add or remove</h2>
+            <div class="messages-error">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                {{message}}<br>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>  
+            <form id="myForm" action='/process', method='post'>
+                <div class="form-item">
+                    <label class="label-item">Email Address:</label>
+                    <input class="input-item" type='text' name='email_address'>
+                </div>
+                <input type='submit' name="formAction" value='Add Email' class="button">
+                <input type='submit' name="formAction" value='Delete Email' class="button">
+            </form>
+            <br>
+            <form action='/success', method='get'>
+                <input type='submit' value='View Current Users' class="button">
+            </form>
+        </div>
+    </body>
+</html>

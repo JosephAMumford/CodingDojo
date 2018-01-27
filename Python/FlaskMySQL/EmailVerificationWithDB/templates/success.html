@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Success</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Current table of users</h1>
+            <div class="messages-success">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            {{message}}<br>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div> 
+            <div id="table">
+                <table>
+                    <tr>
+                        <th>Email Address</th>
+                        <th>Created On</th>
+                    </tr>
+                    {% for user in users: %}
+                        <tr>
+                            <td>{{ user['email_address'] }}</td>
+                            <td>{{ user['created_at'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <br><br>
+            </div>
+            <form action='/', method='get'>
+                <input type='submit' value='Home' class="button">
+            </form>
+        </div>
+    </body>
+</html>

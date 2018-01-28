@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Success</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Success</h1>
+            {% if session['login_success'] == True %}
+                <p>Welcome {{ session['username'] }}!</p>
+                <p>You have successfully logged in</p>
+            {% endif %}
+            {% if session['register_success'] == True %}
+                <p>Welcome {{ session['username']}}!</p>
+                <p>You have successfully registered</p>
+            {% endif %}
+            <form action='/home', method='get'>
+                <input class="button-1" type='submit' value='Home' class="button">
+            </form>
+        </div>
+    </body>
+</html>

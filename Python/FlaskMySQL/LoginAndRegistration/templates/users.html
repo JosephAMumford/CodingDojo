@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>View Users</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Current table of users</h1>
+            <div class="messages-success">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            {{message}}<br>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div> 
+            <div id="table">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email Address</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Registered Date</th>
+                    </tr>
+                    {% for user in users: %}
+                        <tr>
+                            <td>{{ user['first_name'] + " " +user['last_name'] }}</td>
+                            <td>{{ user['email_address'] }}</td>
+                            <td>{{ user['username'] }}</td>
+                            <td>{{ user['password'] }}</td>
+                            <td>{{ user['created_at'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <br><br>
+            </div>
+            <form action='/home', method='get'>
+                <input class="button-1" type='submit' value='Home' class="button">
+            </form>
+        </div>
+    </body>
+</html>

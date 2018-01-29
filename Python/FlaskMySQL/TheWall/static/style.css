@@ -1,0 +1,270 @@
+* {
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 1000px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+#header {
+    display:inline-block;
+    width: 500px;
+}
+
+#button-box {
+    display:inline-block;
+    margin: 20px;
+    width: 500px;
+}
+#login-box {
+    display: none;
+    padding: 10px 0px 5px 0px;
+    border: 1px solid black;
+    margin: 20px;
+    width: 500px;
+    border-radius: 5px;
+    background-color: cornsilk;
+}
+
+#register-box {
+    display: none;
+    margin: 20px;
+    border: 1px solid black;
+    width: 500px;
+    border-radius: 5px;
+    background-color: cornsilk;
+}
+
+
+
+.messages-error {
+    margin: 20px;
+    color: white;
+    background-color: red;
+    font-weight: 200;
+}
+
+.messages-success {
+    margin: 20px;
+    color: white;
+    background-color: green;
+    font-weight: 200;
+}
+
+.button-1 {
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 5px;
+    background-color:#4CAF50;
+    color: white;
+    font-size: 14pt;
+}
+
+#my-form {
+    display: inline-block;
+
+}
+    .label-item {
+        display:inline-block;
+        padding-top: 5px;
+        text-align: right;
+        width: 140px;
+    }
+
+    .input-item {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display:inline-block; 
+        vertical-align:middle;
+        margin-left:20px
+    }
+
+/* users.html */
+#user-table table{
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+    #user-table td, #user-table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #user-table tr:nth-child(even){background-color: #f2f2f2;}
+
+    #user-table tr:hover {background-color: #ddd;}
+
+    #user-table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+
+/* wall.html */
+#wall-header {
+    position: fixed;
+    border-bottom: 1px solid black;
+    top: 0px;
+    width: 1000px;
+    display: block;
+    padding: 0px;
+    z-index: 1;
+    background-color: white;
+}
+
+#wall-header-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#wall-header-table tr, th {
+    border: 0px;
+}
+
+#wall-title {
+    font-size: 16pt;
+    text-align: left;
+}
+
+#wall-session {
+    text-align: right;
+}
+
+#wall-session p {
+    display: inline-block;
+}
+
+#wall-session form {
+    display: inline-block;
+}
+
+.post-message {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0%);
+    width: 80%;
+    display:block;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top:64px;
+    text-align: left;
+
+}
+
+    .post-message h3  {
+        margin: 5px 0px;
+        display: block;
+    }
+
+    .post-message textarea {
+        display: block;
+        width: 95%;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, 0%);
+        resize: none;
+    }
+
+    .post-message-button {
+        position: relative;
+        right: -90%;
+        top: 50%;
+        transform: translate(0%, 0%);
+    }
+
+#wall {
+
+}
+
+.message-box {
+    width: 80%;
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0%);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.comment-box {
+    display: block;
+    text-align: left;
+    padding: 10px;
+    width: 95%;
+    margin-left: auto;
+    margin-right:0px;
+
+    border-top: 1px solid grey;
+}
+
+.post-comment {
+    width: 95%;
+    display:block;
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right:0px;
+    text-align: left;
+}
+
+    .post-comment h3  {
+        margin: 5px 0px;
+        display: block;
+    }
+
+    .post-comment textarea {
+        display: block;
+        width: 95%;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, 0%);
+        resize: none;
+    }
+
+    .post-comment-button {
+        position: relative;
+        right: -90%;
+        top: 50%;
+        transform: translate(0%, 0%);
+    }
+
+.content-box {
+    
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Books</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>My Books</h1>
+            <div class="user-table">
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Added On</th>
+                        <th>Last Update</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for book in books: %}
+                    <tr>
+                        <td>{{ book['title'] }}</td>
+                        <td>{{ book['author'] }}</td>
+                        <td>{{ book['created_at'] }}</td>
+                        <td>{{ book['updated_at'] }}</td>
+                        <td>
+                        <form action='/process', method='post'>
+                            <input type="hidden" name="book-id" value="{{ book['id'] }}">
+                            <input class="button-1" name="action" type='submit' value='Delete' class="button">
+                            <input class="button-1" name="action" type='submit' value='Update' class="button">
+                        </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <br><br>
+            </div>
+            <form action='/add', method='get'>
+                <input class="button-1" type='submit' value='Add Book' class="button">
+            </form>
+        </div>
+    </body>
+</html>

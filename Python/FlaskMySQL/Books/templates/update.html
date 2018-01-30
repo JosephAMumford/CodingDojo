@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Update Book</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Update Book Information</h1>
+            <div class="user-info-box">
+                <form id="myForm" action='/update', method='post'>
+                    <div class="form-item">
+                        <label class="label-item">Title:</label>
+                        <input class="input-item" type='text' name='title' placeholder="{{ book[0]['title']}}">
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Author:</label>
+                        <input class="input-item" type='text' name='author' placeholder="{{ book[0]['author']}}">
+                    </div>
+                    <input type="hidden" name="book-id" value="{{ book[0]['id'] }}">
+                    <input class="button-1" type='submit' name="formAction" value='Update Book' class="button">
+                </form>
+            </div>
+            <form action='/', method='get'>
+                <input class="button-1" type='submit' value='Home' class="button">
+            </form>
+        </div>
+    </body>
+</html>

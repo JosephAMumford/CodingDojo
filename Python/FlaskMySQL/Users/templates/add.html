@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Add User</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Add User Information</h1>
+            <div class="messages-error">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            {{message}}<br>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="user-info-box">
+                <form id="myForm" action='/create', method='post'>
+                    <div class="form-item">
+                        <label class="label-item">First Name:</label>
+                        <input class="input-item" type='text' name='first_name'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Last Name:</label>
+                        <input class="input-item" type='text' name='last_name'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Email Address:</label>
+                        <input class="input-item" type='text' name='email_address'>
+                    </div>
+                    <input class="button-1" type='submit' name="formAction" value='Add User' class="button">
+                </form>
+            </div>
+            <form action='/', method='get'>
+                <input class="button-1" type='submit' value='Home' class="button">
+            </form>
+        </div>
+    </body>
+</html>

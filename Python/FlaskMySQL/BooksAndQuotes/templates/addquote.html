@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Add Quote</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Add Quote</h1>
+            <div class="user-info-box">
+                <form id="myForm" action='/createquote', method='post'>
+                    <div class="form-item">
+                        <textarea rows="4" cols="50"></textarea>
+                    </div>
+                    <input type="hidden" name="book-id" value="{{ book }}">
+                    <input class="button-1" type='submit' name="formAction" value='Add Quote' class="button">
+                </form>
+            </div>
+            <form action='/', method='get'>
+                <input class="button-1" type='submit' value='Home' class="button">
+            </form>
+        </div>
+    </body>
+</html>

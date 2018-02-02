@@ -1,0 +1,233 @@
+* {
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 1000px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+#header {
+    display:inline-block;
+    width: 500px;
+}
+
+#button-box {
+    display:inline-block;
+    margin: 20px;
+    width: 500px;
+}
+#login-box {
+    display: none;
+    padding: 10px 0px 5px 0px;
+    border: 1px solid black;
+    margin: 20px;
+    width: 500px;
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+
+#register-box {
+    display: none;
+    margin: 20px;
+    border: 1px solid black;
+    width: 500px;
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+
+/* users.html */
+#user-table table{
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+    #user-table td  {
+        border: 1px solid #ddd;
+        padding: 0px 8px;
+        height: 36px;
+    }
+
+    #user-table tr:nth-child(even){background-color: #f2f2f2;}
+
+    #user-table tr:hover {background-color: #ddd;}
+
+    #user-table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #4CAF50;
+        color: white;
+    }
+
+
+
+/* dashboard.html*/
+#dashboard-header {
+    position: fixed;
+    border-bottom: 1px solid black;
+    top: 0px;
+    width: 1000px;
+    display: block;
+    padding: 0px;
+    z-index: 1;
+    background-color: white;
+}
+
+#dashboard-header-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#dashboard-header-table tr, th {
+    border: 0px;
+}
+
+#dashboard-title {
+    font-size: 16pt;
+    text-align: left;
+}
+
+#dashboard-session {
+    text-align: right;
+}
+
+#dashboard-session p {
+    display: inline-block;
+}
+
+#dashboard-session form {
+    display: inline-block;
+}
+
+.title-box {
+    position: relative;
+    height: 128px;
+    text-align: center;
+}
+
+.title-box-h3 {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0%);
+    position: absolute;
+	bottom: 0px
+}
+
+.messages-error {
+    margin: 20px;
+    color: white;
+    background-color: red;
+    font-weight: 200;
+}
+
+.messages-success {
+    margin: 20px;
+    color: white;
+    background-color: green;
+    font-weight: 200;
+}
+
+.button-1 {
+    border: 1px solid black;
+    margin: 5px;
+    border-radius: 5px;
+    background-color:skyblue;
+    font-size: 14pt;
+}
+
+#my-form {
+    display: block;
+
+}
+    .label-item {
+        display:inline-block;
+        padding-top: 5px;
+        text-align: right;
+        width: 140px;
+    }
+
+    .label-description {
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, 0%);
+    }
+
+    .input-item {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display:inline-block; 
+        vertical-align:middle;
+        margin-left:20px
+    }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.progress-full {
+    width: 100px;
+    margin: 0px;
+}
+
+.progress-back {
+    height: 18px;
+    border:1px solid black;
+    border-radius: 3px;
+}
+.progress-bar {
+    background: linear-gradient(blue, rgb(48, 48, 255), blue);
+    margin: 0px;
+    height: 18px;
+}
+
+.priority-low {
+    text-align: center;
+    background-color: green;
+    color: white;
+    font-weight: 700;
+}
+
+.priority-medium {
+    text-align: center;
+    background-color: yellow;
+    color: black;
+    font-weight: 700;
+}
+
+.priority-high {
+    text-align: center;
+    background-color: orange;
+    color: white;
+    font-weight: 700;
+}
+
+.priority-urgent {
+    text-align: center;
+    background-color: red;
+    color: white;
+    font-weight: 700;
+}

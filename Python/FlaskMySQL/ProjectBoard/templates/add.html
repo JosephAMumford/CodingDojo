@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Add Project</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Add Project</h1>
+            <div class="messages-error">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            {{message}}<br>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div> 
+            <div class="user-info-box">
+                <form id="myForm" action='/createproject', method='post'>
+                    <div class="form-item">
+                        <label class="label-item">Project Name:</label>
+                        <input class="input-item" type='text' name='name' size="50">
+                    </div>
+                    <div class="tooltip">
+                        <div class="form-item">
+                            <label class="label-item">Deadline:</label>
+                            <input class="input-item" type='text' name='deadline' size="50">
+                        </div>
+                        <span class="tooltiptext">Use mm/dd/yyyy format</span>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Description:</label>
+                        <textarea class="input-item" rows="10" cols="52" name="description"></textarea>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Priority:</label>
+                        <select class="input-item" name="priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                            <option value="urgent">Urgent</option>
+                      </select>
+                    </div>
+                    <input class="button-1" style="margin-top: 50px" type='submit' name="formAction" value='Add Project' class="button">
+                </form>
+            </div>
+            <form action='/', method='get'>
+                <input class="button-1" type='submit' value='Home' class="button">
+            </form>
+        </div>
+    </body>
+</html>

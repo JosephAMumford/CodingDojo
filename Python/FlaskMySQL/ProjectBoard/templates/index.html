@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Login and Registration</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script src= "{{ url_for('static', filename='script.js') }}"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <h1>Login and Registration</h1>
+            </div>
+            <div id="button-box">
+                <button class="button-1" name="login" type="button">Login</button>
+                <button class="button-1" name="register" type="button">Register</button>
+            </div>
+            <div class="messages-error">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            {{message}}<br>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div> 
+            <div id="login-box">
+                <form id="myForm" action='/login', method='post'>
+                    <div class="form-item">
+                        <label class="label-item">Username:</label>
+                        <input class="input-item" type='text' name='username'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Password</label>
+                        <input class="input-item" type='password' name='password'>
+                    </div>
+                    <input class="button-1" type='submit' name="formAction" value='Login' class="button">
+                </form>
+            </div>
+            <div id="register-box">
+                <h2>Enter your information to register</h2>
+                <form id="myForm" action='/register', method='post'>
+                    <div class="form-item">
+                        <label class="label-item">First Name:</label>
+                        <input class="input-item" type='text' name='first_name'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Last Name:</label>
+                        <input class="input-item" type='text' name='last_name'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Username:</label>
+                        <input class="input-item" type='text' name='username'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Email Address:</label>
+                        <input class="input-item" type='text' name='email_address'>
+                    </div>
+                    <div class="tooltip">
+                        <div class="form-item">
+                            <label class="label-item">Date of Birth:</label>
+                            <input class="input-item" type='text' name='birthdate'>
+                        </div>
+                        <span class="tooltiptext">Use mm/dd/yyyy format</span>
+                    </div>
+                    <div class="tooltip">
+                        <div class="form-item">
+                            <label class="label-item">Password:</label>
+                            <input class="input-item" type='password' name='password'>
+                        </div>
+                        <span class="tooltiptext">Password must be at least 8 characters and contain a capital letter and a number</span>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Confirm Password:</label>
+                        <input class="input-item" type='password' name='confirm_password'>
+                    </div>
+                    <input class="button-1" type='submit' name="formAction" value='Register' class="button">
+                </form>
+            </div>
+            <br>
+            <form action='/users', method='get'>
+                <input class="button-1" type='submit' value='View Current Users' class="button">
+            </form>
+        </div>
+    </body>
+</html>

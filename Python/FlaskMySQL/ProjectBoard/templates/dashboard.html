@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Dashboard</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script src= "{{ url_for('static', filename='script.js') }}"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="dashboard-header">
+                <table id="dashboard-header-table">
+                    <tr>
+                        <th id="dashboard-title">Project Manager</th>
+                        <th id="dashboard-session">              
+                            <form  action='/logoff', method='get'>
+                                <label>Welcome {{ session['username'] }}!</label><input class="button-1" type='submit' value='Log Off' class="button">
+                            </form>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="title-box">
+                <div class="title-box-h3">
+                    <h3>Current Projects</h3>
+                </div>
+            </div>
+            <div id="user-table">
+                <table>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Due Date</th>
+                        <th>Priority</th>
+                        <th>Progress</th>
+                        <th>Assigned To</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for project in projects: %}
+                        <tr>
+                            <td>{{ project['name']  }}</td>
+                            <td>{{ project['deadline'] }}</td>
+                            {% if project['priority'] == "low" %}
+                                <td class="priority-low">Low</td>
+
+                                {% elif project['priority']  == "medium" %}
+                                <td class="priority-medium">Medium</td>
+
+                                {% elif project['priority']  == "high" %}
+                                <td class="priority-high">High</td>
+
+                                {% elif  project['priority']  == "urgent" %}
+                                <td class="priority-urgent">Urgent</td>
+
+                            {% endif %} 
+                            <td class="progress-full">
+                                <div class="progress-back"><div class="progress-bar" progress="{{project['progress']}}"></div></div>
+                                
+                            </td>
+                            <td>{{ project['username'] }}</td>
+                            <td>
+                                <form action='/process', method='post'>
+                                    <input type="hidden" name="project-id" value="{{ project['id'] }}">
+                                    <input class="button-1" name="action" type='submit' value='Details' class="button">
+                                    <input class="button-1" name="action" type='submit' value='Update' class="button">
+                                    <input class="button-1" name="action" type='submit' value='Delete' class="button">
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <br><br>
+            </div>
+            <form action='/add', method='get'>
+                <input class="button-1" type='submit' value='Add Project' class="button">
+            </form>
+            <div class="title-box">
+                    <div class="title-box-h3">
+                        <h3>Completed Projects</h3>
+                    </div>
+                </div>
+            <div id="user-table">
+                <table>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Due Date</th>
+                        <th>Date Completed</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for comp_project in completed: %}
+                        <tr>
+                            <td>{{ comp_project['name']  }}</td>
+                            <td>{{ comp_project['deadline'] }}</td>
+                            <td>{{ comp_project['date_completed'] }}</td>
+                            <td>
+                                <form action='/process', method='post'>
+                                    <input type="hidden" name="project-id" value="{{ comp_project['id'] }}">
+                                    <input class="button-1" name="action" type='submit' value='Details' class="button">
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <br><br>
+            </div>
+            <form action='/', method='get'>
+                <input class="button-1" type='submit' value='Home' class="button">
+            </form>
+        </div>
+    </body>
+</html>

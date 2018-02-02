@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Project: {{ project[0]['name'] }}</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Update Project: {{ project[0]['name'] }}</h1>
+            <div class="user-info-box">
+                <form id="myForm" action='/edit', method='post'>
+                    <div class="tooltip">
+                        <div class="form-item">
+                            <label class="label-item">Deadline:</label>
+                            <input class="input-item" type='text' name='deadline' size="50" value="{{ project[0]['deadline'] }}">
+                        </div>
+                        <span class="tooltiptext">Use mm/dd/yyyy format</span>
+                    </div>
+                    <div class="tooltip">
+                        <div class="form-item">
+                            <label class="label-item">Progress:</label>
+                            <input class="input-item" type='text' name='progress' size="50" value="{{ project[0]['progress'] }}">
+                        </div>
+                        <span class="tooltiptext">0.0 - 100.0%</span>
+                    </div>
+                    <div class="form-item">
+                            <label class="label-item">Priority:</label>
+                            <select class="input-item" name="priority" value="{{ project[0]['priority'] }}">
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                                <option value="urgent">Urgent</option>
+                          </select>
+                        </div>
+                    <div class="form-item">
+                            <label class="label-item">Status:</label>
+                            <select class="input-item" name="status" value="{{ project[0]['status'] }}">
+                                <option value="incomplete">Incomplete</option>
+                                <option value="complete">Complete</option>
+                            </select>
+                        </div>
+                    <input type="hidden" name="project-id" value="{{ project[0]['id'] }}">
+                    <input class="button-1" style="margin-top: 50px" type='submit' name="formAction" value='Update Project' class="button">
+                </form>
+            </div>
+            <form action='/', method='get'>
+                <input class="button-1" type='submit' value='Home' class="button">
+            </form>
+        </div>
+    </body>
+</html>

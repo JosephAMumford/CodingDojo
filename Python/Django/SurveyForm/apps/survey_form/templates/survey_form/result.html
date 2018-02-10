@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Survey Form</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'survey_form/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <link rel='shortcut icon' type='image/x-icon' href="{% static 'survey_form/icon.ico' %}" />  
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="message-box">
+                <p>Thanks for submitting this form.  You have submitted this form {{count}} times now!</p>
+            </div>
+            <div id="results-box">
+                <p>Name: {{name}}</p>
+                <p>Location: {{location}}</p>
+                <p>Favorite Language: {{language}}</p>
+                <p>Comment: {{comment}}</p>
+            </div>
+            <div class="link-box">
+                <a class="my-button" href="{ url '/home' }">Go back</a>
+            </div>
+        </div>
+    </body>
+</html>

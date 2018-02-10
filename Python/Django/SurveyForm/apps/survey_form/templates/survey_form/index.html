@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Survey Form</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'survey_form/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <link rel='shortcut icon' type='image/x-icon' href="{% static 'survey_form/icon.ico' %}" />  
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Student Survey</h1>
+            <div id="form-box">
+                <form id="myForm" action='/process', method='post'>
+                    {% csrf_token %}
+                    <div>
+                            <label class="label-item">Name:</label>
+                            <input class="input-item" type='text' name='name'>
+                    </div>
+                    <div>
+                        <label class="label-item">Location:</label>
+                        <select class="input-item" name="location">
+                                <option value="Seattle">Seattle</option>
+                                <option value="Silicon Valley">Silicon Valley</option>
+                                <option value="Washington DC">Washington DC</option>
+                                <option value="Chicago">Chicago</option>
+                                <option value="Los Angeles">Los Angeles</option>
+                                <option value="Dallas">Dallas</option>
+                                <option value="Tulsa">Tulsa</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label-item">Favorite Language:</label>
+                        <select class="input-item" name="language">
+                                <option value="Python">Python</option>
+                                <option value="C#">C#</option>
+                                <option value="C++">C++</option>
+                                <option value="Java">Java</option>
+                                <option value="Ruby">Ruby</option>
+                                <option value="JavaScript">JavaScript</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label-item">Comment:</label>
+                        <textarea class="input-item" name="comment" cols="40" rows="5" placeholder=""></textarea>
+                    </div>
+                    <div class="link-box">
+                        <input class="my-button" type='submit' name="formAction" value='Submit' class="button"
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

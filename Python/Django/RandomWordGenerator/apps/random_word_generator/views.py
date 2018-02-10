@@ -17,8 +17,6 @@ def index(request):
     return render(request, "random_word_generator/index.html", context)
 
 def generate(request):
-    #attempts = request.session['attempt'] + 1
-    print "redirecting"
     return redirect('/')
 
 def get_random_word():

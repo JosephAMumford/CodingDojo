@@ -1,0 +1,42 @@
+* {
+    background-color: whitesmoke;
+}
+
+#wrapper {
+    width: 400px;
+    margin: 0px auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+.word-box {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16pt;
+}
+
+.button-box {
+    position: relative;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 100%);
+    text-align: center;
+}
+
+.my-button {
+    padding: 5px 10px;
+    margin: 0px 20px;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 3px 3px black;
+    background-color: rgb(113, 183, 204);
+    font-size: 14pt;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}

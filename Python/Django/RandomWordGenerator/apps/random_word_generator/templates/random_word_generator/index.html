@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Random Word Generator</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'random_word_generator/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <link rel='shortcut icon' type='image/x-icon' href="{% static 'random_word_generator/icon.ico' %}" />  
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2>Random Word (Attempt # {{request.session.count }})</h2>
+            <div class="word-box">
+                {{ random_word }}
+            </div>
+            <div class="button-box">
+                <a class="my-button left-button" href="{ url '/generate' }">Generate</a>
+                <a class="my-button right-button" href="{ url '/reset' }">Reset</a>
+            </div>
+        </div>
+    </body>
+</html>

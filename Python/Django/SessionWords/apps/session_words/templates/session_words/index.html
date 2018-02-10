@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Session Words</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'session_words/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <link rel='shortcut icon' type='image/x-icon' href="{% static 'session_words/icon.ico' %}" />  
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <h1>Create your own word list</h1>
+            </div>
+            <div id="word-form">
+                <form id="myForm" action='/process', method='post'>
+                    {% csrf_token %}
+                    <div>
+                        <label class="label-item">Add Word:</label>
+                        <input class="input-item" type='text' name='word'>
+                    </div>
+                    <div>
+                        <label class="label-item">Color:</label>
+                        <div class="input-item">
+                            <input type="radio" name="color" value="black" checked>Black<br>
+                            <input type="radio" name="color" value="red">Red<br>
+                            <input type="radio" name="color" value="green">Green<br>
+                            <input type="radio" name="color" value="blue">Blue<br>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="label-item">Word Size:</label>
+                        <select class="input-item" name="word_size">
+                            <option value="8pt">Small</option>
+                            <option value="12pt">Normal</option>
+                            <option value="18pt">Big</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label-item">Word Decorations:</label>
+                        <div class="input-item">
+                            <input type="checkbox" name="decoration" value="underline">Underline<br>
+                        </div>
+                    </div>
+                    <div class="link-box">
+                        <input class="my-button" type='submit' name="formAction" value='Submit' class="button">
+                    </div>
+                </form>
+            </div>
+            <div id="word-list">
+                <h2>My Words</h2>    
+                <table>
+                    {% for word in word_list %}
+                    <tr>
+                        <td><p class="word-p" style="color: {{word.color}}; font-size: {{ word.word_size}}; text-decoration: {{word.decoration}};">{{ word.word }}</p></td>
+                        <td><p class="word-p" >- added on {{word.time}}</p></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <div class="link-box">
+                    <a class="my-button" href="{ url 'reset' }">Reset</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

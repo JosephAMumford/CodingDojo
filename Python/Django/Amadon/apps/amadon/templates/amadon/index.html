@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Amadon Shopping</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'amadon/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <link rel='shortcut icon' type='image/x-icon' href="{% static 'amadon/icon.ico' %}" />  
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2>Amadon Shopping</h2>
+            <div class="inventory-table">
+                <table>
+                    <col width="50%">
+                    <col width="15%">
+                    <col width="10%">
+                    <col width="25%">
+                    <tr>                        
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Action</th>                
+                    </tr>
+                    <tr><!-- Product 1 -->
+                        <form action='/process', method='post'>
+                            {% csrf_token %}
+                            <td>Coding Dojo T-Shirt</td>
+                            <td class="price-data">$17.99</td>
+                            <td>
+                                <select class="input-item" name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="hidden" name="product-id" value="1">
+                                <input class="button-1" name="action" type='submit' value='Buy' class="button">
+                            </td>
+                        </form>
+                    </tr>
+                    <tr><!-- Product 2 -->
+                        <form action='/process', method='post'>
+                            {% csrf_token %}
+                            <td>Coding Dojo Hoodie</td>
+                            <td class="price-data">$29.99</td>
+                            <td>
+                                <select class="input-item" name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="hidden" name="product-id" value="2">
+                                <input class="button-1" name="action" type='submit' value='Buy' class="button">
+                            </td>
+                        </form>
+                    </tr>
+                    <tr><!-- Product 3 -->
+                        <form action='/process', method='post'>
+                            {% csrf_token %}
+                            <td>Coding Dojo Beanie</td>
+                            <td class="price-data">$14.99</td>
+                            <td>
+                                <select class="input-item" name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="hidden" name="product-id" value="3">
+                                <input class="button-1" name="action" type='submit' value='Buy' class="button">
+                            </td>
+                        </form>
+                    </tr>
+                    <tr><!-- Product 4 -->
+                        <form action='/process', method='post'>
+                            {% csrf_token %}
+                            <td>Coding Dojo Sweater</td>
+                            <td class="price-data">$35.99</td>
+                            <td>
+                                <select class="input-item" name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="hidden" name="product-id" value="4">
+                                <input class="button-1" name="action" type='submit' value='Buy' class="button">
+                            </td>
+                        </form>
+                    </tr>
+                    <tr><!-- Product 5 -->
+                        <form action='/process', method='post'>
+                            {% csrf_token %}
+                            <td>Coding Dojo Coffee Mug</td>
+                            <td class="price-data">$9.99</td>
+                            <td>
+                                <select class="input-item" name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="hidden" name="product-id" value="5">
+                                <input class="button-1" name="action" type='submit' value='Buy' class="button">
+                            </td>
+                        </form>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

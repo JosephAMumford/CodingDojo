@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Show User</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <link rel='shortcut icon' type='image/x-icon' href="{% static 'main/icon.ico' %}" />  
+    </head>
+    <body>
+        <div id="wrapper" style="width:600px">
+            <h2>Show User</h2>
+            <div class="user-table">
+                <table>
+                    <tr>
+                        <th colspan="2">User Information</th>
+                    </tr>
+                    <tr>
+                        <td>User ID</td>
+                        <td>{{ user.id }}</td>
+                    </tr>
+                    <tr>
+                        <td>Full Name</td>
+                        <td>{{user.first_name}} {{ user.last_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email Address</td>
+                        <td>{{ user.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Created At</td>
+                        <td>{{ user.created_at}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center">
+                            <a href="{% url 'edit_user' id=user.id %}"  class="button-1">Edit</a>
+                            <a href="{% url 'delete_user' id=user.id %}"  class="button-1">Delete</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="text-align: center; padding:20px">
+                <a href="{% url 'users' %}" class="button-1">Show Users</a>
+            </div>
+        </div>
+    </body>
+</html>

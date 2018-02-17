@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Semi-Restful Users</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <link rel='shortcut icon' type='image/x-icon' href="{% static 'main/icon.ico' %}" />  
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2>Semi-Restful Users</h2>
+            <a href="users/new">New User</a><br>
+            <a href="users/15/edit">Edit User</a><br>
+            <a href="users/15">Show User</a><br>
+            <a href="users/create">Create User</a><br>
+            <a href="users/15/destroy">Delete User</a><br>
+            <a href="users/update">Update User</a>
+        </div>
+    </body>
+</html>

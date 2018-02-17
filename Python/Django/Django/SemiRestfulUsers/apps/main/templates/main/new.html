@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Create New User</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <link rel='shortcut icon' type='image/x-icon' href="{% static 'main/icon.ico' %}" />  
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2>Create User</h2>
+            {% if messages %}
+            <div class="error-box">
+                {% for message in messages %}
+                    <p class="messages-error">{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <div class="user-box">
+                <form id="my-form" action="create" method='post'>
+                    {% csrf_token %}
+                    <div class="form-item">
+                        <label class="label-item">First Name:</label>
+                        <input class="input-item" type='text' name='first_name'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Last Name:</label>
+                        <input class="input-item" type='text' name='last_name'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Email Address:</label>
+                        <input class="input-item" type='text' name='email'>
+                    </div>
+                    <div style="text-align: center">
+                        <input class="button-submit" type='submit' value='Submit' class="button">
+                    </div>
+                </form>
+            </div>
+            <div style="text-align: center; padding:20px">
+                <a href="{% url 'users' %}" class="button-1">Show Users</a>
+            </div>
+        </div>
+    </body>
+</html>

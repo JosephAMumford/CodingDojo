@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Courses</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <link rel='shortcut icon' type='image/x-icon' href="{% static 'main/icon.ico' %}" />  
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Current Courses</h1>
+            <div class=course-box>
+                <h2 style="text-align: center">Add a new course</h2>
+                <form id="my-form" action='courses/add' method='post'>
+                    {% csrf_token %}
+                    <div class="form-item">
+                        <label class="label-item">Course Name:</label>
+                        <input class="input-item" type='text' name='name'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Description:</label>
+                        <textarea class="input-item" rows="5" cols="52" name="description"></textarea>
+                    </div>
+                    <div style="text-align: center">
+                        <input class="button-submit" type='submit' value='Add Course' class="button">
+                    </div>
+                </form>
+            </div>
+            <div style="height: 50px">          
+            </div>
+            <div class="user-table">
+                <table>
+                    <tr>
+                        <th width="20%">Course Name</th>
+                        <th width="30%">Description</th>
+                        <th width="20%">Date Added</th>
+                        <th width="30%">Actions</th>
+                    </tr>
+                    {% for item in list %}
+                    <tr>
+                        <td>{{ item.course.name}}</td>
+                        <td>{{ item.description}}</td>
+                        <td>{{ item.course.created_at}}</td>
+                        <td>
+                            <a href="{% url 'show_course' id=item.course_id %}" class="button-1">Show Course</a>
+                            <a href="{% url 'delete_course' id=item.course_id %}"  class="button-1">Delete Course</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

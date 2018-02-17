@@ -1,0 +1,120 @@
+* {
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 1000px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.course-box {
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 0px auto;
+    width: 600px;
+    text-align: left;
+    padding: 10px;  
+}
+
+.button-1 {
+    border: 1px solid black;
+    margin: 0px 10px;
+    border-radius: 5px;
+    background-color:#4CAF50;
+    font-size: 12pt;
+    color: white;
+    text-decoration: none;
+    padding: 2px 5px;
+}
+
+.button-delete {
+    border: 1px solid black;
+    margin: 0px 10px;
+    border-radius: 5px;
+    background-color:red;
+    font-size: 12pt;
+    color: white;
+    text-decoration: none;
+    padding: 2px 5px;
+}
+
+.button-home {
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 5px;
+    background-color:#4CAF50;
+    font-size: 12pt;
+    color: white;
+}
+
+.button-submit {
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 5px;
+    background-color:#4CAF50;
+    font-size: 12pt;
+    color: white;
+}
+
+.user-table table{
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+    .user-table td, .user-table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .user-table tr:nth-child(even){background-color: #f2f2f2;}
+
+    .user-table tr:hover {background-color: #ddd;}
+
+    .user-table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #4CAF50;
+        color: white;
+    }
+
+#my-form {
+    display: inline-block;
+
+}
+    .label-item {
+        display:inline-block;
+        padding-top: 5px;
+        text-align: right;
+        width: 140px;
+    }
+
+    .input-item {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display:inline-block; 
+        vertical-align:middle;
+        margin-left:20px
+    }
+
+.user-box {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.error-box {
+    display: block;
+    width: 400px;
+    margin: 0px auto;
+    border-radius: 3px;
+}
+
+.messages-error {
+    color: white;
+    background-color: red;
+    font-weight: 200;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Courses</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <link rel='shortcut icon' type='image/x-icon' href="{% static 'main/icon.ico' %}" />  
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="course-box">
+                <h2 style="text-align: center">Course Information</h2>
+                <p style="text-align: center">Course Name: {{ course.course.name}}</p>
+                <p style="text-align: center">Course Description: {{ course.description}}</p>
+            </div>
+            <div style="text-align: center; padding:20px">
+                <a href="{% url 'courses' %}" class="button-1">Home</a>
+            </div>
+            <div style="height: 50px">          
+            </div>
+            <div class="course-box">
+                <form id="my-form" action='courses/comments/add' method='post'>
+                    {% csrf_token %}
+                    <div class="form-item">
+                        <label class="label-item">Comment:</label>
+                        <textarea class="input-item" rows="5" cols="52" name="comment"></textarea>
+                    </div>
+                    <div style="text-align: center">
+                            <input type="hidden" name="course_id" value="{{course.course_id}}">
+                        <input class="button-submit" type='submit' value='Add Comment' class="button">
+                    </div>
+                </form>
+                <h3 style="text-align: center">Comments</h3>
+                {% for comment in comments %}
+                <p>{{comment.created_at}} - {{comment.comment}}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

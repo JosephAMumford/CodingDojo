@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Delete Course</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <link rel='shortcut icon' type='image/x-icon' href="{% static 'main/icon.ico' %}" />  
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="course-box">
+                <h2 style="text-align: center">Are you sure you want this course?</h2>
+                <p style="text-align: center">Course Name: {{ course.course.name}}</p>
+                <p style="text-align: center">Course Description: {{ course.description}}</p>
+            </div>
+            <div style="text-align: center; padding:20px">
+                <a href="{% url 'courses' %}" class="button-1">Cancel</a>
+                <a href="{% url 'destroy' id=course.course_id %}"  class="button-delete">Yes! I want to delete this</a>
+            </div>
+        </div>
+    </body>
+</html>

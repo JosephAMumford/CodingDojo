@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Success!</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <link rel='shortcut icon' type='image/x-icon' href="{% static 'main/icon.ico' %}" />  
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Welcome {{ user.username }} </h1>
+            <p>You have successfully logged in!</p>
+            <div style="text-align: center; padding:20px">
+                <a href="{% url 'home' %}" class="button-1">Home</a>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Login and Registration</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script src= "{% static 'main/script.js' %}"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <h1>Login and Registration</h1>
+            </div>
+            <div id="button-box">
+                <button class="button-1" name="login" type="button">Login</button>
+                <button class="button-1" name="register" type="button">Register</button>
+            </div>
+            {% if messages %}
+            <div class="error-box">
+                {% for message in messages %}
+                    <p class="messages-error">{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <div id="login-box">
+                <form id="myForm" action='login', method='post'>
+                    {% csrf_token %}
+                    <div class="form-item">
+                        <label class="label-item">Username:</label>
+                        <input class="input-item" type='text' name='username'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Password</label>
+                        <input class="input-item" type='password' name='password'>
+                    </div>
+                    <input class="button-1" type='submit' name="formAction" value='Login' class="button">
+                </form>
+            </div>
+            <div id="register-box">
+                <h2>Enter your information to register</h2>
+                <form id="myForm" action='register', method='post'>
+                    {% csrf_token %}
+                    <div class="form-item">
+                        <label class="label-item">First Name:</label>
+                        <input class="input-item" type='text' name='first_name'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Last Name:</label>
+                        <input class="input-item" type='text' name='last_name'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Username:</label>
+                        <input class="input-item" type='text' name='username'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Email Address:</label>
+                        <input class="input-item" type='text' name='email'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Birthdate:</label>
+                        <input class="input-item" type='text' name='birthdate'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Password:</label>
+                        <input class="input-item" type='password' name='password'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Confirm Password:</label>
+                        <input class="input-item" type='password' name='confirm_password'>
+                    </div>
+                    <input class="button-1" type='submit' name="formAction" value='Register' class="button">
+                </form>
+            </div>
+            <br>
+            <div style="text-align: center; padding:20px">
+                <a href="{% url 'users' %}" class="button-1">Show Users</a>
+            </div>
+        </div>
+    </body>
+</html>

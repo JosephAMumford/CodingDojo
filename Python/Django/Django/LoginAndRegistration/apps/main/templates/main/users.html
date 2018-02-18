@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Users</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <link rel='shortcut icon' type='image/x-icon' href="{% static 'main/icon.ico' %}" />  
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Current Users</h1>
+            <div class="user-table">
+                <table>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Birthdate</th>
+                        <th>Password</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for user in user_list %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.first_name}} {{ user.last_name}}</td>
+                        <td>{{ user.email}}</td>
+                        <td>{{ user.birthdate}}</td>
+                        <td>{{ user.password|slice:"7:17"}}...</td>
+                        <td>{{ user.created_at}}</td>
+                        <td>
+                            <a href="{% url 'delete_user' id=user.id %}"  class="button-1">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div style="text-align: center; padding:20px">
+                <a href="{% url 'home' %}" class="button-1">Home</a>
+            </div>
+        </div>
+    </body>
+</html>

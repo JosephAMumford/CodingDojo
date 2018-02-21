@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="header">
+                <div class="text-left">
+                    <p class="text-big">Test App</p>
+                    <p class="text-medium">Dashboard</p>
+                </div>
+                {% if request.session.logged_in == True %}
+                <div class="text-right">
+                    <p class="text-normal">Logged in as {{ main_user.first_name}} {{ main_user.last_name }}</p>
+                    <a class="button-1" href="{% url 'logout' %}">Logout</a>
+                </div>
+                {% endif %}
+                {% if request.session.logged_in == False %}
+                <div class="text-right">
+                    <a class="button-1" href="{% url 'login' %}">Sign In</a>
+                </div>
+                {% endif %}
+            </div>
+            {% if messages %}
+            <div class="error-box">
+                {% for message in messages %}
+                    <p class="messages-error">{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div style="height:50px">
+            </div>
+            
+            <div class="message-box">
+                <h2>Welcome to the Test</h2>
+                <p>We're going to build a cool application using a MVC framework!  This 
+                    application was built with the Village88 folks!
+                </p>
+                <a href="{% url 'login' %}">Start</a>
+            </div>
+            <div style="height:50px">
+            </div>
+            <div class="info-box">
+                <h4>Manage Users</h4>
+                <p>Using this application, you'll learn how to add, remove, and edit users 
+                    for the application.
+                </p>
+            </div>
+            <div class="info-box">
+                <h4>Leave messages</h4>
+                <p>Users will be able to leave a message to another user using this application.
+                </p>
+            </div>
+            <div class="info-box">
+                <h4>Edit User Information</h4>
+                <p>Admins will be able to edit another user's information (email address, first name,
+                    last name, etc).
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

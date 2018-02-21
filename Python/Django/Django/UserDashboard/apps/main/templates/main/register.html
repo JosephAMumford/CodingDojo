@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Register</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <script src= "{% static 'main/script.js' %}"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="header">
+                <div class="text-left">
+                    <p class="text-big">Test App</p>
+                    <p class="text-medium">Dashboard</p>
+                </div>
+                {% if request.session.logged_in == True %}
+                <div class="text-right">
+                    <p class="text-normal">Logged in as {{ main_user.first_name}} {{ main_user.last_name }}</p>
+                    <a class="button-1" href="{% url 'logout' %}">Logout</a>
+                </div>
+                {% endif %}
+                {% if request.session.logged_in == False %}
+                <div class="text-right">
+                    <a class="button-1" href="{% url 'login' %}">Sign In</a>
+                </div>
+                {% endif %}
+            </div>
+            {% if messages %}
+            <div class="error-box">
+                {% for message in messages %}
+                    <p class="messages-error">{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <h2>Enter your information to register</h2>
+            <form id="myForm" action='new', method='post'>
+                {% csrf_token %}
+                <div class="form-item">
+                    <label class="label-item">First Name:</label>
+                    <input class="input-item" type='text' name='first_name'>
+                </div>
+                <div class="form-item">
+                    <label class="label-item">Last Name:</label>
+                    <input class="input-item" type='text' name='last_name'>
+                </div>
+                <div class="form-item">
+                    <label class="label-item">Email Address:</label>
+                    <input class="input-item" type='text' name='email'>
+                </div>
+                <div class="form-item">
+                    <label class="label-item">Password:</label>
+                    <input class="input-item" type='password' name='password'>
+                </div>
+                <div class="form-item">
+                    <label class="label-item">Confirm Password:</label>
+                    <input class="input-item" type='password' name='confirm_password'>
+                </div>
+                <input class="button-1" type='submit' name="formAction" value='Register' class="button">
+            </form>
+            <a href="{% url 'login' %}">Already have an account?  Click here to login</a>
+        </div>
+    </body>
+</html>

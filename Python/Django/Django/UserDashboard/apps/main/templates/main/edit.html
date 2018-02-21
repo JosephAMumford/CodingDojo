@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Edit</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="header">
+                <div class="text-left">
+                    <p class="text-big">Test App</p>
+                    <p class="text-medium">Dashboard</p>
+                </div>
+                {% if request.session.logged_in == True %}
+                <div class="text-right">
+                    <p class="text-normal">Logged in as {{ main_user.first_name}} {{ main_user.last_name }}</p>
+                    <a class="button-1" href="{% url 'logout' %}">Logout</a>
+                </div>
+                {% endif %}
+                {% if request.session.logged_in == False %}
+                <div class="text-right">
+                    <a class="button-1" href="{% url 'login' %}">Sign In</a>
+                </div>
+                {% endif %}
+            </div>
+            {% if messages %}
+            <div class="error-box">
+                {% for message in messages %}
+                    <p class="messages-error">{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            <div class="text-left">
+                <p class="text-big">Edit user information</p>
+            </div>
+            <div class="text-right">
+                <a class="button-1" href="{% url 'dashboard' %}">Return to Dashboard</a>
+            </div>
+
+            <div>
+                <form id="myForm" action='update_user', method='post'>
+                {% csrf_token %}
+                <div class="form-item">
+                    <label class="label-item">First Name:</label>
+                    <input class="input-item" type='text' value='{{ user.first_name}}' name='first_name'>
+                </div>
+                <div class="form-item">
+                    <label class="label-item">Last Name:</label>
+                    <input class="input-item" type='text' value='{{ user.last_name}}' name='last_name'>
+                </div>
+                <div class="form-item">
+                    <label class="label-item">Email Address:</label>
+                    <input class="input-item" type='text' value='{{ user.email}}' name='email'>
+                </div>
+                <div class="form-item">
+                    <label class="label-item">Description:</label>
+                    <textarea class="input-item" rows="5" cols="52" value='{{ user.description}}' name="description" placeholder='{{ user.description}}'></textarea>
+                </div>
+                {% if main_user.user_level == 'admin' %}
+                <div class="form-item">
+                    <label class="label-item">User Level:</label>
+                    <select class="input-item" value='{{ user.user_level}}' name="user_level">
+                        <option value="admin">Admin</option>
+                        <option value="normal">Normal</option>
+                    </select>
+                </div>
+                {% endif %}
+                <input type="hidden" name="user_id" value="{{user.id}}">
+                <input class="button-1" type='submit' name="formAction" value='Update User' class="button">
+                </form>
+            </div>
+            <div>
+                <form id="myForm" action='update_password', method='post'>
+                {% csrf_token %}
+                <div class="form-item">
+                    <label class="label-item">Password:</label>
+                    <input class="input-item" type='password' name='password'>
+                </div>
+                <div class="form-item">
+                    <label class="label-item">Confirm Password:</label>
+                    <input class="input-item" type='password' name='confirm_password'>
+                </div>
+                <input type="hidden" name="user_id" value="{{user.id}}">
+                <input class="button-1" type='submit' name="formAction" value='Update Password' class="button">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

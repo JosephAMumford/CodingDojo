@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>View</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script src= "{% static 'main/script.js' %}"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="header">
+                <div class="text-left">
+                    <p class="text-big">Test App</p>
+                    <p class="text-medium">Dashboard</p>
+                </div>
+                {% if request.session.logged_in == True %}
+                <div class="text-right">
+                    <p class="text-normal">Logged in as {{ main_user.first_name}} {{ main_user.last_name }}</p>
+                    <a class="button-1" href="{% url 'logout' %}">Logout</a>
+                </div>
+                {% endif %}
+                {% if request.session.logged_in == False %}
+                <div class="text-right">
+                    <a class="button-1" href="{% url 'login' %}">Sign In</a>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="text-left">
+                    <p class="text-big">{{ user.first_name }} {{ user.last_name }}</p>
+                </div>
+                <div class="text-right">
+                    <a class="button-1" href="{% url 'dashboard' %}">Return to Dashboard</a>
+            </div>
+            <div>
+                <p>Registered at: {{ user.created_at}}</p>
+                <p>User ID: {{ user.id}}</p>
+                <p>Email Address: {{ user.email}}</p>
+                <p>Description: {{ user.description}}</p>
+            </div>
+            <div class="post-message">
+                <h3>Post a message</h3>
+                <form action="post_message" method='post'>
+                    {% csrf_token %}
+                    <textarea class="message-area" name="message" rows="5" placeholder=""></textarea>
+                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                    <input class="button-1-inactive post-message-button" type='submit' value='Submit' class="button" disabled>
+                </form>
+            </div>
+            <div id="wall">    
+                {% for message in messages %}
+                    <div class="message-box">
+                        <div class="tooltip">
+                            <button type="button" class="content-toggle button-1" value="Hide">Hide</button>
+                            <span class="tooltiptext">Click to hide or show comments</span>
+                        </div>
+                        <h3>{{ message.user_id.full_name }} - {{ message.created_at }}</h3>
+                        {% if request.session.user_id == message.user_id_id %}
+                            <form action="{% url 'delete_message' %}" method='post'>
+                                {% csrf_token %}
+                                <input type="hidden" name="message_id" value="{{ message.id }}">
+                                <input type="hidden" name="user_id" value="{{ user.id }}">
+                                <input class="button-1" type='submit' value='Delete Message' class="button">
+                            </form>
+                        {% endif%}
+                        
+                        <div class="content-box">
+                            <p>{{ message.content }}</p>
+                        
+                            {% for reply in replies %}
+                                {% if reply.message_id_id == message.id %}
+                                <div class="comment-box">
+                                        <h3>{{reply.user_id.full_name}} - {{ reply.created_at }}</h3>
+                                        <p>{{reply.content}}</p>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                                
+                            <div class="post-comment">
+                                <h3>Post a comment</h3>
+                                <form action="post_comment" method='post'>
+                                    {% csrf_token %}
+                                    <textarea name="comment" rows="5" placeholder=""></textarea>
+                                    <input type="hidden" name="message_id" value="{{ message.id }}">
+                                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                                    <input class="button-1 post-comment-button" type='submit' value='Submit' class="button">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

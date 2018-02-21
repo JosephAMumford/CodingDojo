@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Dashboard</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <script src= "{% static 'main/script.js' %}"></script>
+    </head>
+    <body>
+        <div id="wrapper">            
+            <div class="header">
+                <div class="text-left">
+                    <p class="text-big">Test App</p>
+                    <p class="text-medium">Dashboard</p>
+                    <a class="text-medium; text-decoration: none;" href="{% url 'edit_user' id=main_user.id %}">Profile</a>
+                </div>
+                {% if request.session.logged_in == True %}
+                <div class="text-right">
+                    <p class="text-normal">Logged in as {{ main_user.first_name}} {{ main_user.last_name }}</p>
+                    <a class="button-1" href="{% url 'logout' %}">Logout</a>
+                </div>
+                {% endif %}
+                {% if request.session.logged_in == False %}
+                <div class="text-right">
+                    <a class="button-1" href="{% url 'login' %}">Sign In</a>
+                </div>
+                {% endif %}
+            </div>
+            
+            {% if main_user.user_level == 'admin' %}
+            <div class="text-left">
+                <p class="text-big">Manage Users</p>
+            </div>
+            <div class="text-right">
+                <a href="{% url 'add_user' %}" class="button-1">Add User</a>
+            </div>
+            {% endif %}
+            
+            {% if main_user.user_level == 'normal' %}
+            <h1>All Users</h1>
+            {% endif %}
+            
+            <div class="user-table">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Created At</th>
+                        <th>User Level</th>
+                        {% if main_user.user_level == 'admin' %}
+                        <th>Actions</th>
+                        {% endif %}
+                    </tr>
+                    {% for user in user_list %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td><a href="{% url 'view_user' id=user.id %}">{{ user.first_name }} {{ user.last_name }}</a></td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.created_at }}</td>
+                        <td>{{ user.user_level }}</td>
+                        {% if main_user.user_level == 'admin' %}
+                        <td>
+                            <a href="{% url 'confirm' id=user.id %}" class="button-1">Delete</a>
+                            <a href="{% url 'edit_user' id=user.id %}"  class="button-1">Edit</a>
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

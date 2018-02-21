@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Index</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <script src= "{% static 'main/script.js' %}"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div style="text-align: center; padding:20px">
+                <a href="{% url 'home' %}" class="button-1">Home</a>
+                <a href="{% url 'login' %}" class="button-1">Login</a>
+                <a href="{% url 'register' %}" class="button-1">Register</a>
+                <a href="{% url 'add_user' %}" class="button-1">Add User</a>
+                <a href="{% url 'edit_user' id=1%}" class="button-1">Edit User</a>
+                <a href="{% url 'view_user' id=1%}" class="button-1">View User</a>
+                <a href="{% url 'dashboard' %}" class="button-1">Dashboard</a>
+            </div>
+        </div>
+    </body>
+</html>

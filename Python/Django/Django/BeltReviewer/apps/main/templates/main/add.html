@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Add Book Review</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="header">
+                <div class="text-left">
+                    <p class="text-big">Book Reviewer</p>
+                </div>
+                {% if request.session.logged_in == True %}
+                <div class="text-right">
+                    <p class="text-normal">Logged in as {{ main_user.first_name}} {{ main_user.last_name }} | </p>
+                    <a class="button-1" href="{% url 'logout' %}">Logout</a>
+                </div>
+                {% endif %}
+                {% if request.session.logged_in == False %}
+                <div class="text-right">
+                    <a class="button-1" href="{% url 'login' %}">Sign In</a>
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                <h2>Add a New Book Title and Review</h2>
+                <form class="myForm" action='process_review', method='post'>
+                    {% csrf_token %}
+                    <div class="form-item">
+                        <label class="label-item">Book Title:</label>
+                        <input class="input-item" type='text' name='book_title'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Select an author from the list:</label>
+                        <select class="input-item" name="current_book_author">
+                            {%for author in authors %}
+                                <option value="{{ author.name }}">{{ author.name }}</option>
+                            {% endfor%}
+                        </select>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Or enter a new author:</label>
+                        <input class="input-item" type='text' name='new_book_author'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Review:</label>
+                        <textarea class="input-item" rows="5" cols="52" name="review"></textarea>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Rating:</label>
+                        <select class="input-item" value='{{ user.user_level}}' name="rating">
+                                <option value="1">&#x2605;</option>
+                                <option value="2">&#x2605; &#x2605;</option>
+                                <option value="3">&#x2605; &#x2605; &#x2605;</option>
+                                <option value="4">&#x2605; &#x2605; &#x2605; &#x2605;</option>
+                                <option value="5">&#x2605; &#x2605; &#x2605; &#x2605; &#x2605;</option>
+                        </select>
+                    </div>
+                    <input type="hidden" name="book_exists" value="false">
+                    <input class="button-1" type='submit' name="register" value='Add Book and Review' class="button">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

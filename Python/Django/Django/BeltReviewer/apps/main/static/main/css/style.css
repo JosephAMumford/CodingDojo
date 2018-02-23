@@ -1,0 +1,219 @@
+* {
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 1000px;
+    margin: 0px auto;
+}
+
+.header {
+    border-bottom: 2px solid black;
+    margin: 0px;
+    padding: 5px 10px;
+}
+
+.title {
+    display: inline-block;
+    margin:0px 5px;
+    padding: 0px;
+}
+
+.info-box {
+    vertical-align: top;
+    display: inline-block;
+    margin:0px;
+    padding: 0px;
+    width: 33%;
+}
+
+.login-box {
+    vertical-align: top;
+    display: inline-block;
+    margin:0px;
+    padding: 0px;
+    width: 50%;
+}
+
+.register-box {
+    vertical-align: top;
+    display: inline-block;
+    margin:0px;
+    padding: 0px;
+    width: 49%;
+}
+
+.button-1 {
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 5px;
+    background-color:rgb(76, 122, 175);
+    color:white;
+    text-decoration: none;
+    font-size: 12pt;
+    padding: 5px;
+}
+
+.button-1-confirm {
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: red;
+    color:white;
+    text-decoration: none;
+    font-size: 12pt;
+    padding: 5px;
+}
+
+.button-1-inactive {
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 5px;
+    background-color:rgb(31, 49, 70);
+    color:white;
+    text-decoration: none;
+    font-size: 12pt;
+    padding: 5px;
+}
+
+.my-form {
+    display: inline-block;
+
+}
+    .label-item {
+        display:inline-block;
+        padding-top: 5px;
+        text-align: right;
+        width: 140px;
+    }
+
+    .input-item {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display:inline-block; 
+        vertical-align:middle;
+        margin-left:20px
+    }
+
+/* ERRORS */
+.error-box {
+    display: block;
+    width: 400px;
+    margin: 0px auto;
+    border-radius: 3px;
+}
+
+.messages-error {
+    color: white;
+    background-color: red;
+    font-weight: 200;
+}
+
+/* FONT SIZE */
+.text-left {
+    display: inline-block;
+    padding: 0px;
+    margin: 10px 0px;
+    width: 49%;
+    text-align: left;
+}
+
+.text-right {
+    padding: 0px;
+    margin: 10px 0px;
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+}
+
+.text-big {
+    display: inline-block;
+    padding: 5px;
+    margin: 0px;
+    font-size: 16pt;
+    font-weight: 600;
+}
+
+.text-medium {
+    display: inline-block;
+    padding: 5px;
+    margin: 0px 5px;
+    font-size: 14pt;
+}
+
+.text-normal {
+    display: inline-block;
+    padding: 5px;
+    margin: 0px;
+    font-size: 12pt;
+}
+
+/* BOOKS PAGE */
+.recent-books-box {
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+    margin:0px 20px;
+    padding: 20px;
+    width: 45%;
+    height: 500px;
+}
+
+.all-books-box {
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+    margin:0px 20px;
+    padding: 20px;
+    width: 30%;
+    height: 500px;
+    border: 1px solid black;
+    overflow: auto;
+}
+
+.recent-review {
+
+}
+
+/* SHOW BOOK */
+.show-reviews-box {
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+    margin:0px 20px;
+    padding: 20px;
+    width: 35%;
+    height: 500px;
+    overflow: auto;
+}
+
+.show-add-review {
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+    margin:0px 20px;
+    padding: 20px;
+    width: 45%;
+    height: 500px;
+}
+
+.button-right {
+    margin: 5px 0px;
+    position: relative;
+    left: 80%;
+    top: 50%;
+    transform: translate(-50%, 0%);
+    display: inline-block;
+    text-align: right;
+}
+
+.user-reviews-box {
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+    margin:0px 20px;
+    padding: 20px;
+    width: 50%;
+    height: 500px;
+    overflow: auto;
+}

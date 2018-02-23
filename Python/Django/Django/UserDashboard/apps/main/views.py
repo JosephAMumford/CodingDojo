@@ -217,14 +217,6 @@ def logout(request):
     request.session.flush()
     return redirect('home')
 
-
-    email = models.CharField(max_length=255)
-    password = models.CharField(max_length=255)
-    user_level = models.CharField(max_length=6)
-    description = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
 # Process Post message
 def post_message(request):
 

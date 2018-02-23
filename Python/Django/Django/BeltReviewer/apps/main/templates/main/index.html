@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Welcome</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="header">
+                <div class="text-left">
+                    <p class="text-big">Welcome</p>
+                </div>
+                {% if request.session.logged_in == True %}
+                <div class="text-right">
+                    <p class="text-normal">Logged in as {{ main_user.first_name}} {{ main_user.last_name }}</p>
+                    <a class="button-1" href="{% url 'logout' %}">Logout</a>
+                </div>
+                {% endif %}
+            </div>
+            {% if messages %}
+            <div class="error-box">
+                {% for message in messages %}
+                    <p class="messages-error">{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            <div class="register-box">
+                <h2>User registration</h2>
+                <form class="myForm" action='process_registration', method='post'>
+                    {% csrf_token %}
+                    <div class="form-item">
+                        <label class="label-item">First Name:</label>
+                        <input class="input-item" type='text' name='first_name'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Last Name:</label>
+                        <input class="input-item" type='text' name='last_name'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Username:</label>
+                        <input class="input-item" type='text' name='username'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Email Address:</label>
+                        <input class="input-item" type='text' name='email'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Password:</label>
+                        <input class="input-item" type='password' name='password'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Confirm Password:</label>
+                        <input class="input-item" type='password' name='confirm_password'>
+                    </div>
+                    <input class="button-1" type='submit' name="register" value='Register' class="button">
+                </form>
+            </div>
+        
+            <div class="login-box">
+                <h2>Login</h2>
+                <form class="myForm" action='process_login', method='post'>
+                    {% csrf_token %}
+                    <div class="form-item">
+                        <label class="label-item">Email Address:</label>
+                        <input class="input-item" type='text' name='email'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Password:</label>
+                        <input class="input-item" type='password' name='password'>
+                    </div>
+                    <input class="button-1" type='submit' name="login" value='Login' class="button">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

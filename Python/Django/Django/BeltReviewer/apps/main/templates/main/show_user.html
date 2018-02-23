@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>View User</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="header">
+                <div class="text-left">
+                    <p class="text-big">Book Reviewer</p>
+                </div>
+                <div class="text-right">
+                    <a class="button-1" href="{% url 'books' %}">Return to Main</a>
+                    {% if request.session.logged_in == True %}
+                    <p class="text-normal">Logged in as {{ main_user.first_name}} {{ main_user.last_name }} | </p>
+                    <a class="button-1" href="{% url 'logout' %}">Logout</a>
+                    {% endif %}
+                </div>
+                {% if request.session.logged_in == False %}
+                <div class="text-right">
+                    <a class="button-1" href="{% url 'login' %}">Sign In</a>
+                </div>
+                {% endif %}
+            </div>
+            <div class="text-left">
+                <h2>{{ main_user.full_name }}</h2>
+                <h4>Username: {{ main_user.username }}</h4>
+                <h4>Email: {{ main_user.email }}</h4>
+                <h4>Date Joined: {{ main_user.created_at }}</h4>
+                <h4>Total Reviews: {{ reviews|length }}</h4>
+            </div>
+            <div class='user-reviews-box'>
+                <p class="text-medium">Check out {{main_user.full_name }}'s reviews</p>
+                <hr>
+                {% for review in reviews %}
+                    <a class="text-medium" href="{% url 'show_book' id=review.book.id %}">{{ review.book.title }}</a><br>
+                {% endfor %}
+             </div>
+        </div>
+    </body>
+</html>

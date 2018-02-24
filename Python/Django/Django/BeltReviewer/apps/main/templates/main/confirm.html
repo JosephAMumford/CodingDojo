@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Confirm Delete</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="header">
+                <div class="text-left">
+                    <p class="text-big">Book Reviewer</p>
+                </div>
+                {% if request.session.logged_in == True %}
+                <div class="text-right">
+                    <a class="button-1" href="{% url 'add_review' %}">Add Book Review</a>
+                    <p class="text-normal">Logged in as {{ main_user.first_name}} {{ main_user.last_name }} | </p>
+                    <a class="button-1" href="{% url 'logout' %}">Logout</a>
+                </div>
+                {% endif %}
+                {% if request.session.logged_in == False %}
+                <div class="text-right">
+                    <a class="button-1" href="{% url 'login' %}">Sign In</a>
+                </div>
+                {% endif %}
+            </div>
+            <div style="height: 50px">
+            </div>
+            <div class="confirm-box">
+                <h2 style="text-align: center">Are you sure you want this review?</h2>
+            </div>
+            <div style="text-align: center; padding:20px">
+                <a href="{% url 'books' %}" class="button-1">Cancel</a>
+                <a href="{% url 'delete_review' id=review_id %}"  class="button-delete">Yes! I want to delete this</a>
+            </div>
+        </div>
+    </body>
+</html>

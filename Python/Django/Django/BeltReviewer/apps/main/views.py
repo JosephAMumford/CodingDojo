@@ -141,6 +141,13 @@ def delete_review(request,id):
     review.delete()
     return redirect ('show_user', id=book_id)
 
+# Process delete review
+def confirm_delete(request,id):
+    context = {
+        'review_id':id,
+    }
+    return render(request, "main/confirm.html", context)
+
 # Show Book page - Book details, reviews
 def show_book(request, id):
     main_user = User.objects.get(id=request.session['user_id'])

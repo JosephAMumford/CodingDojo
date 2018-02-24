@@ -207,6 +207,17 @@
     text-align: right;
 }
 
+.button-delete {
+    border: 1px solid black;
+    margin: 0px 10px;
+    border-radius: 5px;
+    background-color:red;
+    font-size: 12pt;
+    color: white;
+    text-decoration: none;
+    padding: 2px 5px;
+}
+
 .user-reviews-box {
     vertical-align: top;
     display: inline-block;
@@ -216,4 +227,13 @@
     width: 50%;
     height: 500px;
     overflow: auto;
+}
+
+.confirm-box {
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 0px auto;
+    width: 600px;
+    text-align: left;
+    padding: 10px;  
 }

@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title>Add Book Review</title>
+        <title>Book Information</title>
         <meta charset="UTF-8">
         {% load static %}
         <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
@@ -57,7 +57,7 @@
                     
                     {% if main_user.id == review.user.id%}
                     <div class="button-right">
-                        <a class="button-1" href="{% url 'delete_review' id=review.id %}">Delete Review</a>
+                        <a class="button-1" href="{% url 'confirm_delete' id=review.id %}">Delete Review</a>
                     </div>
                     {% endif %}
                     

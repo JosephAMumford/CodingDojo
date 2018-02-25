@@ -1,0 +1,181 @@
+* {
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 1000px;
+    margin: 0px auto;
+}
+
+.basic-header {
+    border-bottom: 2px solid black;
+    margin: 0px;
+    padding: 5px 10px;
+}
+
+/* LOGIN AND REGISTRATION STYLING */
+.login-box {
+    vertical-align: top;
+    display: inline-block;
+    margin:0px;
+    padding: 0px;
+    width: 50%;
+    text-align: center;
+}
+
+.register-box {
+    vertical-align: top;
+    display: inline-block;
+    margin:0px;
+    padding: 0px;
+    width: 49%;
+    text-align: center;
+}
+    
+/* FORM STYLING */
+.basic-form {
+    display: inline-block;
+}
+    .label-item {
+        display:inline-block;
+        padding-top: 5px;
+        text-align: right;
+        width: 140px;
+    }
+
+    .input-item {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display:inline-block; 
+        vertical-align:middle;
+        margin-left:20px
+    }
+
+/* BUTTON STYLING */
+.basic-button {
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 3px;
+    background-color:rgb(76, 122, 175);
+    color:white;
+    text-decoration: none;
+    font-size: 12pt;
+    padding: 5px;
+    text-align: center;
+}
+
+.basic-button-confirm {
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 3px;
+    background-color: red;
+    color:white;
+    text-decoration: none;
+    font-size: 12pt;
+    padding: 5px;
+}
+
+.basic-button-inactive {
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 3px;
+    background-color:rgb(31, 49, 70);
+    color:white;
+    text-decoration: none;
+    font-size: 12pt;
+    padding: 5px;
+}
+
+/* ERRORS */
+.error-box {
+    display: block;
+    width: 400px;
+    margin: 0px auto;
+    border-radius: 3px;
+}
+
+.messages-error {
+    color: white;
+    background-color: red;
+    font-weight: 200;
+}
+
+.messages-normal {
+    color: white;
+    background-color: green;
+    font-weight: 200;
+}
+
+/* TEXT SIZE STYLING */
+.text-normal {
+    display: inline-block;
+    padding: 5px;
+    margin: 0px;
+    font-size: 12pt;
+}
+
+.text-medium {
+    display: inline-block;
+    padding: 5px;
+    margin: 0px 5px;
+    font-size: 14pt;
+}
+
+.text-big {
+    display: inline-block;
+    padding: 5px;
+    margin: 0px;
+    font-size: 16pt;
+    font-weight: 600;
+}
+
+/* TEXT ALIGNMENT STYLING */
+.text-left {
+    display: inline-block;
+    padding: 0px;
+    margin: 10px 0px;
+    width: 49%;
+    text-align: left;
+}
+
+.text-right {
+    padding: 0px;
+    margin: 10px 0px;
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+}
+
+/* MISCELLANEOUS STYLINGS */
+.confirm-box {
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 0px auto;
+    width: 600px;
+    text-align: left;
+    padding: 10px;  
+}
+
+/* BASIC TABLE */
+.basic-table table{
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+    .basic-table td, .basic-table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .basic-table tr:nth-child(even){background-color: #f2f2f2;}
+
+    .basic-table tr:hover {background-color: #ddd;}
+
+    .basic-table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: rgb(76, 122, 175);
+        color: white;
+    }

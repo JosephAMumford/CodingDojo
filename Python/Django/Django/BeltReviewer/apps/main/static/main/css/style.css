@@ -126,12 +126,12 @@
     text-align: right;
 }
 
-.text-big {
+/* TEXT SIZE STYLING */
+.text-normal {
     display: inline-block;
     padding: 5px;
     margin: 0px;
-    font-size: 16pt;
-    font-weight: 600;
+    font-size: 12pt;
 }
 
 .text-medium {
@@ -141,11 +141,12 @@
     font-size: 14pt;
 }
 
-.text-normal {
+.text-big {
     display: inline-block;
     padding: 5px;
     margin: 0px;
-    font-size: 12pt;
+    font-size: 16pt;
+    font-weight: 600;
 }
 
 /* BOOKS PAGE */

@@ -1,0 +1,75 @@
+* {
+    font-family: sans-serif;
+}
+
+.header-box {
+    background-color: darkgrey;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+
+.content-box {
+    background-color: lightgray;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.dynamic-box {
+    background-color: lightgoldenrodyellow;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+/* MOBILE */
+@media only screen and (max-width: 480px){
+    .sm  {
+        display: block;
+    }
+    .md {
+        display: none;
+    }
+
+    .lg {
+        display: none;
+    }
+
+    title {
+        text: "Phone";
+    }
+}
+
+/* TABLET */
+@media only screen and (min-width: 481px){
+    .sm  {
+        display: none;
+    }
+    .md {
+        display: block;
+    } 
+    .lg {
+        display: none;
+    }
+    title {
+        text: "Tablet";
+    }
+}
+
+/* DESKTOP */
+@media only screen and (min-width: 1024px){
+    .sm {
+        display: none;
+    }
+    .md {
+        display: none;
+    }
+    .lg {
+        display: block;
+    }
+    title {
+        text: "Desktop";
+    }
+}

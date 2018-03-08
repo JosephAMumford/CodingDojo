@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>AJAX Post</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'main/css/style.css' %}" media-"screen" title="no title" charset="utf-8">
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script src= "{% static 'main/script.js' %}"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class='notes-box'>
+                <div class="post-note">
+                    Note 1
+                </div>
+                <div class="post-note">
+                    Note 2
+                </div>
+                <div class="post-note">
+                    Note 3
+                </div>
+            </div>
+            <div class='form-box'>
+                <button class="my-button">Test</button>
+            </div>
+        </div>
+    </body>
+</html>

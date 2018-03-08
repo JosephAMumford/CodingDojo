@@ -1,0 +1,16 @@
+* {
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 800px;
+    text-align: center;
+}
+
+.post-note {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    margin: 10px;
+}

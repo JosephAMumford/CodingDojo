@@ -1,0 +1,28 @@
+* {
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.input-box {
+    background-color: antiquewhite;
+}
+.label-item {
+    display:inline-block;
+    padding-top: 5px;
+    text-align: right;
+    width: 140px;
+}
+
+.input-item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display:inline-block; 
+    vertical-align:middle;
+    margin-left:20px;
+}
+
+.calender-table {
+    border:1px solid black;
+}

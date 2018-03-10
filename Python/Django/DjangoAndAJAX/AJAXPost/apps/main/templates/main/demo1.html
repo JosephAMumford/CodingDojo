@@ -15,7 +15,7 @@
     <script>
       $('#button_json').click(function(){
         $.ajax({
-              url: '/main/all.json', /* Where should this go? */
+              url: '/all.json', /* Where should this go? */
               success: function(serverResponse) {  /* What code should we run when the server responds? */
                 console.log("Received this from server:", serverResponse)
                 console.log("Now, I can use the serverResponse to manipulate the DOM")
@@ -25,7 +25,7 @@
       });
       $('#button_html').click(function(){
         $.ajax({
-                url: '/main/all.html', /* Where should this go? */
+                url: '/all.html', /* Where should this go? */
                 success: function(serverResponse) {  /* What code should we run when the server responds? */
                   console.log("Received this from server:", serverResponse)
                   $('#placeholder1').html(serverResponse)

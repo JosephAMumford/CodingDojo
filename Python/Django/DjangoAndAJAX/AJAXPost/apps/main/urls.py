@@ -1,11 +1,7 @@
-
-
 from django.conf.urls import url
 from . import views
+
 urlpatterns = [
-    url(r'^$', views.index),
-    url(r'^all.json$', views.all_json),
-    url(r'^all.html$', views.all_html),
-    url(r'^find$', views.find),
-    url(r'^create$', views.create),
+    url(r'^$', views.index, name='index'),
+    url(r'^post_note', views.post_note, name='post_note')
 ]

@@ -12,18 +12,23 @@
     <body>
         <div id="wrapper">
             <div class='notes-box'>
+            {% if posts %}
+                {% for post in posts %}
                 <div class="post-note">
-                    Note 1
+                    {{ post.content }}
                 </div>
-                <div class="post-note">
-                    Note 2
-                </div>
-                <div class="post-note">
-                    Note 3
-                </div>
+                {% endfor %}
+            {% endif %}
             </div>
             <div class='form-box'>
-                <button class="my-button">Test</button>
+                <form id="myForm" action='post_note' method='POST'>
+                    {% csrf_token %}
+                    <div class="form-item">
+                        <label class="label-item">Message:</label>
+                        <textarea class="input-item" rows="4" cols="50" name='post-area'></textarea>
+                    </div>
+                    <input class="button-1" type='submit' name="formAction" value='Post It!' class="button">
+                </form>
             </div>
         </div>
     </body>

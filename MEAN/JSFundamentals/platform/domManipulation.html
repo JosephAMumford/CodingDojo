@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <div id="message">
+            Hello World!
+        </div>
+        <ol id="fruit">
+            <li>Bananas</li>
+            <li>Oranges</li>
+            <li>Apples</li>
+        </ol> 
+        <script>
+            let message = "<h1>Look, I'm a dynamic header!</h1>";
+            document.getElementById("message").innerHTML = message;
+
+            let new_fruit = document.createElement("li");
+            new_fruit.innerHTML = "Pears";
+            document.getElementById("fruit").appendChild(new_fruit);
+        </script>   
+    </body>
+</html>

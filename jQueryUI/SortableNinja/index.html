@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Sortable Ninja</title>
+        <meta charset="UTF-8">
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script>
+            $( function() {
+                $( ".draggable" ).draggable({
+                    containment: "#picture-box",
+                    scroll: false
+                });
+            } );
+        </script>
+        <style>
+            #wrapper {
+                width: 1000px;
+                margin: 0px auto;
+                text-align: center;
+            }
+            .draggable {
+                margin: 0px;
+                padding: 0px; 
+                display: inline-block;
+            }
+
+            #picture-box {
+                width: 370px;
+                height: 550px;
+                background-color: burlywood;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="picture-box">
+                <div class="draggable" class="ui-widget-content">
+                    <img src="sort5.png" alt="sort5.png">
+                </div>
+                <div class="draggable" class="ui-widget-content">
+                    <img src="sort1.png" alt="sort1.png">
+                </div>
+                <div class="draggable" class="ui-widget-content">
+                    <img src="sort2.png" alt="sort2.png">
+                </div>
+                <div class="draggable" class="ui-widget-content">
+                    <img src="sort4.png" alt="sort4.png">
+                </div>
+                <div class="draggable" class="ui-widget-content">
+                    <img src="sort3.png" alt="sort3.png">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

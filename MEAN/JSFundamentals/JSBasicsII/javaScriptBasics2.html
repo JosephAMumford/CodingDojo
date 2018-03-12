@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JavaScript Basics II</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>                       
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>                  
+        <script>
+            function magic_multiply(x,y){
+                if(typeof x === 'number' && typeof y === 'number'){
+                    if(x == 0 && y == 0){
+                        return "All inputs 0"
+                    }
+                    else{
+                        return x * y;
+                    }   
+                }
+                else if(x.constructor === Array && typeof y === 'number'){
+                    var list = [];
+                    for(var i = 0; i < x.length; i++){
+                        list.push(x[i] * y);
+                    }
+                    return list;
+                }
+                else if(typeof x === 'string' && typeof y === 'number'){
+                    var newString = '';
+                    for(var i = 0; i < y; i++){
+                        newString += x;
+                    }
+                    return newString;
+                }
+                else if(typeof x === 'string' || typeof y === 'string'){
+                    return "Error: Cannot multiply by a string";
+                }
+                else{
+                    return "No valid output based on input";
+                }
+            }
+
+            //TEST 1
+            let test1 = magic_multiply(5,2);
+            console.log(test1);
+
+            //TEST 2
+            let test2 = magic_multiply(0,0);
+            console.log(test2);
+
+            //TEST 3
+            let test3 = magic_multiply([1,2,3],2);
+            console.log(test3);
+
+            //TEST 4
+            let test4 = magic_multiply(7,'three');
+            console.log(test4);
+
+            //TEST 5 - Bonus
+            let test5 = magic_multiply("Brendo",4)
+            console.log(test5);
+
+        </script>                                                                             
+    </head>
+    <body>
+        <div id="#wrapper">
+            <h3>Magic Multiply Function</h3>
+            <pre>
+                if(typeof x === 'number' && typeof y === 'number'){
+                    if(x == 0 && y == 0){
+                        return "All inputs 0"
+                    }
+                    else{
+                        return x * y;
+                    }   
+                }
+                else if(x.constructor === Array && typeof y === 'number'){
+                    var list = [];
+                    for(var i = 0; i < x.length; i++){
+                        list.push(x[i] * y);
+                    }
+                    return list;
+                }
+                else if(typeof x === 'string' && typeof y === 'number'){
+                    var newString = '';
+                    for(var i = 0; i < y; i++){
+                        newString += x;
+                    }
+                    return newString;
+                }
+                else if(typeof x === 'string' || typeof y === 'string'){
+                    return "Error: Cannot multiply by a string";
+                }
+                else{
+                    return "No valid output based on input";
+                }
+            </pre>
+            <hr>
+            <h3>Test 1</h3>
+            <p>Input: <samp>magic_multiply(5,2)</samp></p>
+            <p>Output: <samp>10</samp></p>
+            <hr>
+
+            <h3>Test 2</h3>
+            <p>Input: <samp>magic_multiply(0,0)</samp></p>
+            <p>Output: <samp>All inputs 0</samp></p>
+            <hr>
+
+            <h3>Test 3</h3>
+            <p>Input: <samp>magic_multiply([1,2,3],2)</samp></p>
+            <p>Output: <samp>[2,4,6]</samp></p>
+            <hr>
+
+            <h3>Test 4</h3>
+            <p>Input: <samp>magic_multiply(7,'three')</samp></p>
+            <p>Output: <samp>Error: Cannot multiply by a string</samp></p>
+            <hr>
+
+            <h3>Test 5</h3>
+            <p>Input: <samp>magic_multiply('Brendo',4)</samp></p>
+            <p>Output: <samp>BrendoBrendoBrendoBendo</samp></p>
+            <hr>
+        </div>
+    </body>
+</html>

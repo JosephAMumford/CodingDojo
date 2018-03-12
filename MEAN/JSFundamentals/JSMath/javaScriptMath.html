@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JavaScript Math Functions</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>                       
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>                  
+        <script>
+            function zero_negativity(numbers){
+                value = false;
+                for(var i = 0; i < numbers.length; i++){
+                    if(numbers[i] == 0){
+                        value = true;
+                    }
+                }
+                return value;
+            }
+
+            function is_even(number){
+                if(number % 2 == 0){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+
+            function how_many_even(numbers){
+                var value = 0;
+                for(var i = 0; i < numbers.length; i++){
+                    if(is_even(numbers[i])){
+                        value++;
+                    }
+                }
+                return value;
+            }
+
+            function create_dummy_array(n){
+                var value = [];
+                for(var i = 0; i < n; i++){
+                    value.push(get_random_int(10))
+                }
+                return value;
+            }
+
+            function random_choice(numbers){
+                var value = get_random_int(numbers.length);
+                return numbers[value];
+            }
+
+            function get_random_int(max){
+                return Math.floor(Math.random() * Math.floor(max));
+            }
+
+            //Math 1
+            console.log(zero_negativity([1,2,3,4,5]))
+            console.log(zero_negativity([1,2,0,4,5]))
+
+            //Math 2
+            console.log(is_even(6));
+            console.log(is_even(11));
+
+            //Math 3
+            console.log(how_many_even([1,2,3,4,5,6]));
+            console.log(how_many_even([1,3,5,7,9,11]));
+            console.log(how_many_even([2,4,6,8,10,12]));
+
+            //Math 4
+            console.log(create_dummy_array(4));
+            console.log(create_dummy_array(9));
+
+            //Math 5
+            console.log(random_choice([1,2,3,4,5,6,7,8,9,10]));
+            console.log(random_choice([3,1,4,1,5,9,2,7]));
+            console.log(random_choice([1,2,3]));
+
+        </script>                                                                             
+    </head>
+    <body>
+        <div id="#wrapper">
+            <h3>JavaScript Math Functions</h3>
+            <pre>
+                function zero_negativity(numbers){
+                    value = false;
+                    for(var i = 0; i < numbers.length; i++){
+                        if(numbers[i] == 0){
+                            value = true;
+                        }
+                    }
+                    return value;
+                }
+        
+                function is_even(number){
+                    if(number % 2 == 0){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+        
+                function how_many_even(numbers){
+                    var value = 0;
+                    for(var i = 0; i < numbers.length; i++){
+                        if(is_even(numbers[i])){
+                            value++;
+                        }
+                    }
+                    return value;
+                }
+        
+                function create_dummy_array(n){
+                    var value = [];
+                    for(var i = 0; i < n; i++){
+                        value.push(get_random_int(9))
+                    }
+                    return value;
+                }
+        
+                function random_choice(numbers){
+                    var value = get_random_int(numbers.length);
+                    return numbers[value];
+                }
+    
+                function get_random_int(max){
+                    return Math.floor(Math.random() * Math.floor(max));
+                }
+            </pre>
+            <hr>
+            <h3>Math 1</h3>
+            <p>Input: <samp>zero_negativity([1,2,3,4,5])</samp></p>
+            <p>Output: <samp>false</samp></p>
+            <p>Input: <samp>zero_negativity([1,2,0,4,5])</samp></p>
+            <p>Output: <samp>true</samp></p>
+            <hr>
+
+            <h3>Math 2</h3>
+            <p>Input: <samp>is_even(6)</samp></p>
+            <p>Output: <samp>true</samp></p>
+            <p>Input: <samp>is_even(11)</samp></p>
+            <p>Output: <samp>false</samp></p>
+            <hr>
+
+            <h3>Math 3</h3>
+            <p>Input: <samp>how_many_even([1,2,3,4,5,6])</samp></p>
+            <p>Output: <samp>3</samp></p>
+            <p>Input: <samp>how_many_even([1,3,5,7,9,11])</samp></p>
+            <p>Output: <samp>0</samp></p>
+            <p>Input: <samp>how_many_even([2,4,6,8,10,12])</samp></p>
+            <p>Output: <samp>6</samp></p>
+            <hr>
+
+            <h3>Math 4</h3>
+            <p>Input: <samp>create_dummy_array(4)</samp></p>
+            <p>Output: <samp>[5,4,2,3]</samp></p>
+            <p>Input: <samp>create_dummy_array(9)</samp></p>
+            <p>Output: <samp>[4,0,8,9,7,7,5,9,7]</samp></p>
+            <hr>
+
+            <h3>Math 5</h3>
+            <p>Input: <samp>random_choice([1,2,3,4,5,6,7,8,9,10])</samp></p>
+            <p>Output: <samp>4</samp></p>
+            <p>Input: <samp>random_choice([3,1,4,1,5,9,2,7])</samp></p>
+            <p>Output: <samp>1</samp></p>
+            <p>Input: <samp>random_choice([1,2,3])</samp></p>
+            <p>Output: <samp>2</samp></p>
+            <hr>
+        </div>
+    </body>
+</html>

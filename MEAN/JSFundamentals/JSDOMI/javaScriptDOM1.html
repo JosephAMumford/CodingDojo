@@ -1,0 +1,39 @@
+<html>
+    <body>
+        <h1>Students</h1>
+        <ul id="main">
+            <!-- this is empty-->
+        </ul> 
+
+        <h2>Students</h2>
+        <p id="test">
+            <!-- this is empty, use superAppend to add to <p> -->
+        </p>
+
+        <script>
+            //Use loop to create new html elements
+            function appendList(array, id){
+                for(var i = 0; i < array.length; i++){
+                    let list_item = document.createElement("li");
+                    list_item.innerHTML= array[i];
+                    document.getElementById(id).appendChild(list_item);
+                }
+            };
+
+            //Added element parameter to function
+            function superAppend(array, element, id){
+                for(var i = 0; i < array.length; i++){
+                    let list_item = document.createElement(element);
+                    list_item.innerHTML= array[i];
+                    document.getElementById(id).appendChild(list_item);
+                }
+            };
+
+            let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+            let target_id = "main";
+            appendList(students, target_id);
+
+            superAppend(students,'p','test');
+        </script>   
+    </body>
+</html>

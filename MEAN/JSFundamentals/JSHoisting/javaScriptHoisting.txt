@@ -1,0 +1,36 @@
+JavaScript Hoisting
+
+1
+Output:
+Undefined (var hello goes to the top but is not assigned until after console.log()
+
+2
+Output:
+magnet (var needle is reassigned within test()
+
+3
+Output:
+super cool (var brendan is only reassigned when the print() is run)
+
+4
+Output:
+chicken (var food is declared, assigned, then called)
+half-chicken (food is already decalred, but reassigned and then printed)
+
+5
+Output:
+error, mean() not defined (function is attached to var mean so mean() is not declared or defined at first)
+
+6
+Output:
+Undefined (var genre is hoisted from function, declared but not defined)
+rock (genre in function scope is assgined to rock)
+r&b (genre is already declared, so reassigned to r&b)
+disco (genre is now in global scope and uses global assignment of disco)
+
+7
+Output:
+san jose (var dojo is hoisted from function, declared and assigned prior to use)
+seattle (dojo in function scope is assigned to seattle)
+burbank (dojo is already decalred, so reassigned to burbank)
+san jose (dojo is now in global scope and uses global assignment of san jose)

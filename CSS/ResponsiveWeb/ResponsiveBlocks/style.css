@@ -1,0 +1,94 @@
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrapper{
+    background-color: silver;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0px auto;
+}
+
+#header{
+    height: 150px;
+    background-color: green;
+}
+
+#advertisement{
+    height: 120px;
+    background-color: purple;
+    margin-top: 5px;
+}
+
+@media only screen and (max-width: 480px){
+    #navigation{
+        display: none;
+    }
+
+    #main_content{
+        background-color: red;
+        margin-top: 10px;
+        padding: 10px;
+    }
+    .subcontents{
+        height: 200px;
+        width: 100%;
+        background-color: yellow;
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 481px){
+    #navigation{
+        display: none;
+    }
+
+    #main_content{
+        vertical-align: top;
+        background-color: red;
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .subcontents{
+        height: 200px;
+        width: 200px;
+        background-color: yellow;
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    #wrapper {
+        width: 840px;
+    }
+    #navigation{
+        height: 300px;
+        width: 200px;
+        background-color: blue;
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 5px;
+    }
+
+    #main_content{
+        vertical-align: top;
+        width: 610px;
+        background-color: red;
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .subcontents{
+        height: 200px;
+        width: 200px;
+        background-color: yellow;
+        display: inline-block;
+    }
+}

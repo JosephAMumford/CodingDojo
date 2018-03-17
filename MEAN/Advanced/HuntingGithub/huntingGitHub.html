@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hunting GitHub</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>                       <!-- jQuery -->
+    </head>
+    <body>
+        <button id="someButton">This is Some Button</button>
+        <h1></h1>
+        <ul id="main">
+            <!-- this is empty-->
+        </ul>
+        <script>
+            var button = document.getElementById("someButton")
+            button.addEventListener("click", whatToDoOnClick);
+            function whatToDoOnClick() {
+                $.get("https://api.github.com/users/JosephAMumford", displayName)
+                function displayName(data) {
+                    for(item in data){
+                        let list_item = document.createElement("li");
+                        let str = "<strong>" + item + "</strong>" + ":  " + data[item];
+                        list_item.innerHTML=str;
+                        document.getElementById("main").appendChild(list_item);
+                    }
+                    //console.log(data);
+                }
+            }
+       </script>
+    </body>
+</html>

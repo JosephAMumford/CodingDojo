@@ -44,7 +44,7 @@ class Underscore(object):
 # Create underscore object
 _ = Underscore()
 
-# Use map function to apply function to all liest elements
+# Use map function to apply function to all list elements
 mapped = _.map([1,2,3,4], lambda x: x * x)
 print mapped
 

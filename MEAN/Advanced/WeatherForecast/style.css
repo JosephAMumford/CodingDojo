@@ -1,0 +1,84 @@
+* {
+    /*outline: 1px solid magenta;*/
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 890px;
+    margin: 0px auto;
+}
+
+#header {
+    margin: 20px;
+    padding: 5px;
+    text-align: center;
+}
+
+#header h2 {
+    margin: 10px;
+}
+
+#searchForm {
+    display: inline-block;
+    vertical-align: top;
+    width: 400px;
+    margin: 10px;
+    padding: 10px;
+    background-color: wheat;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+    #searchForm label {
+        display: block;
+        margin: 0px 0px 10px 0px;
+    }
+
+    #searchForm  input {
+        margin: 10px;
+    }
+
+#weatherBox {
+    width: 360px;
+    margin: 10px 0px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: whitesmoke;
+}
+    #weatherBox h3 {
+        text-align: center;
+        margin: 5px 0px;
+    }
+    #weatherBox h4 {
+        margin: 5px 0px;
+    }
+
+#searchHistory {
+    display: inline-block;
+    vertical-align: top;
+    width: 400px;
+    margin: 10px;
+    padding: 10px;
+    background-color: wheat;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+    #searchHistory h3 {
+        text-align: center;
+        margin: 10px;
+    }
+
+    #searchHistory h4 {
+        text-align: center;
+
+    }
+
+    .historyTab {
+        border-radius: 5px;
+        border: 1px solid black;
+        background-color: whitesmoke;
+        margin: 10px;
+        padding: 5px 10px;
+    }

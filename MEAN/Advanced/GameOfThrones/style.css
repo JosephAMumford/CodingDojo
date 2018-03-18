@@ -1,0 +1,58 @@
+* {
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 1052px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+#header {
+}
+    #header h1 {
+        text-align: center;
+    }
+
+    #header h2 {
+        text-align: center;
+    }
+
+#selection-area {
+    padding: 10px;
+    margin: 20px 0px;
+}
+
+    .house-img {
+        display: inline-block;
+        width: 200px;
+        height: 315px;
+        margin: 10px;
+        border-radius: 5px;
+    }
+
+    .scroll-button {
+        left: 50%;
+        top: 50%;
+        transform: translate(0%, -200%);
+        display: inline-block;
+        border-radius: 5px;
+    }
+
+    .arrow-img {
+        width: 48px;
+    }
+
+
+#info-area {
+    margin: 10px auto;
+    display: inline-block;
+    width: 500px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#info h4 {
+    padding: 10px;
+}
+

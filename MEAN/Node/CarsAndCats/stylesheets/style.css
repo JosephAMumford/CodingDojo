@@ -1,0 +1,49 @@
+* {
+    font-family: sans-serif;
+}
+#wrapper {
+    width: 800px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+
+#list {
+    display: inline-block;
+    width: 600px;
+    text-align: left;
+}
+.mylist {
+    list-style-position: inside;
+}
+
+.my-form {
+    display: inline-block;
+
+}
+    .label-item {
+        display:inline-block;
+        padding-top: 5px;
+        text-align: right;
+        width: 140px;
+    }
+
+    .input-item {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display:inline-block; 
+        vertical-align:middle;
+        margin-left:20px
+    }
+
+.button-1 {
+    margin-top: 20px;
+}
+
+.image {
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 3px;
+}

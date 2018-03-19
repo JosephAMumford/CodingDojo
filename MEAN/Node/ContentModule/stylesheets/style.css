@@ -1,0 +1,20 @@
+* {
+    font-family: sans-serif;
+}
+#wrapper {
+    width: 800px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.image {
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.center {
+    text-align: center;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JSON Intro</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Links -->
+
+    </head>
+    <body>
+        <h2>Store and retrieve data from local storage.</h2>
+        <p id="demo"></p>
+
+        <script>
+
+            if (typeof(Storage) !== "undefined") {
+                //Storing data:
+                myObj = { "name":"John", "age":31, "city":"New York" };
+                myJSON = JSON.stringify(myObj);
+                localStorage.setItem("testJSON", myJSON);
+        
+                //Retrieving data:
+                text = localStorage.getItem("testJSON");
+                obj = JSON.parse(text);
+                document.getElementById("demo").innerHTML = obj.name;
+            } else {
+                // Sorry! No Web Storage support..
+            }
+
+            
+    
+
+        </script>
+    </body>
+</html>

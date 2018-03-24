@@ -1,0 +1,13 @@
+#wrapper {
+    text-align: center;
+}
+
+.button-link {
+    margin: 5px;
+    padding:5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    text-decoration: none;
+    background-color: lightgray;
+    color: black;
+}

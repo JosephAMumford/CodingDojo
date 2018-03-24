@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Survey Form Result</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="results-box">
+                <p class="underline">Submitted information:</p>
+                <p>Name: <%= user.name %></p>
+                <p>Location: <%= user.location %></p>
+                <p>Favorite Language: <%= user.language %></p>
+                <p>Comment: <%= user.comment %></p>
+            </div>
+            <div class="center">
+                <a class="button-link" href="/">Home</a>
+            </div>
+        </div>
+    </body>
+</html>

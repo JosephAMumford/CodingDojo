@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Survey Form</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div style="height: 100px"></div>
+            <div class="form-box">
+                <form class="myForm" action='/submit', method='post'>
+                    <div>
+                        <label class="label-item">Your Name:</label>
+                        <input class="input-item" type='text' name='name'>
+                    </div>
+                    <div>
+                        <label class="label-item">Dojo Location:</label>
+                        <select class="input-item" name="location">
+                            <option value="Seattle">Seattle</option>
+                            <option value="Silicon Valley">Silicon Valley</option>
+                            <option value="Washington DC">Washington DC</option>
+                            <option value="Chicago">Chicago</option>
+                            <option value="Los Angeles">Los Angeles</option>
+                            <option value="Dallas">Dallas</option>
+                            <option value="Tulsa">Tulsa</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label-item">Favorite Langauge:</label>
+                        <select class="input-item" name='language'>
+                            <option value="Python">Python</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="C#">C#</option>
+                            <option value="C++">C++</option>
+                            <option value="Ruby">Ruby</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label-item">Comment (optional):</label>
+                        <textarea class="input-item" name="comment" cols="40" rows="5" placeholder=""></textarea>
+                    </div>              
+                    <div class="right">
+                        <input class="button-link" type='submit' name="submit" value='Submit' class="button">
+                    </div>  
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

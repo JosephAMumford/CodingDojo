@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Title</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h2 class='center'>Here are all the users:</h2>
+        <% for (var x in users) { %>
+            <h3>Name: <%= users[x].name %></h3>
+            <h4>Email: <%= users[x].email %></h4>
+            <hr>
+        <% } %>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Great Number Game</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2>Welcome to the Great Number Game</h2>
+            <h4>I am thinking of a number between 1 and 100</h4>
+
+            <h4>Take a guess.  Number of guesses: <%= data.number_of_guesses %></h4>
+            <h4>Guesses so far: <%= data.current_guesses %></h4>
+            <% if(data.state != 'won'){ %>
+                <% if(data.state == 'low'){ %>
+                    <div class="red-box">
+                        <h2>Too low!</h2>
+                    </div>
+                <% }%>
+                <% if(data.state == 'high'){ %>
+                    <div class="red-box">
+                        <h2>Too high!</h2>
+                    </div>
+                <% } %>
+                <form class="guess-form" action="/process" method="POST">
+                    <input type="text" name="user_guess" placeholder="Enter guess...">
+                    <input type="submit" value="Submit">
+                </form>
+            <% } %>
+            <% if(data.state == "won") { %>
+                <div class="green-box">
+                    <h2>You won!</h2>
+                    <form action='/reset' method="POST">
+                        <input type="submit" value="Play Again">
+                    </form>
+                </div>
+            <% } %>
+        </div>
+    </body>
+</html>

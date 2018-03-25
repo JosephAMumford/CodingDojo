@@ -1,0 +1,38 @@
+* {
+    font-family: sans-serif;
+}
+
+#wrapper {
+    width: 600px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.guess-form {
+    margin: 20px 0px;
+}
+
+.green-box {
+    margin:20px 0px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 200px;
+    width: 200px;
+    background-color: green;
+
+}
+
+.red-box {
+    margin:20px 0px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 200px;
+    width: 200px;
+    background-color: red;
+}

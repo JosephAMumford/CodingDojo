@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>Survey Form</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type ="text/javascript">
+            $(document). ready(function (){
+
+                var socket  = io.connect();     // this triggers the connection event in our server!
+                
+                $('.submit-button').click(function (){
+                    
+                    form_data = {
+                        name: $('input[name="name"]').val(""),
+                        location: $('select[name="location"]').val("Seattle"),
+                        language: $('select[name="language"]').val("Python"),
+                        comment: $('textarea[name="comment"]').val(""),
+                    }
+
+                    socket.emit("posting_form", form_data);
+                });
+                
+                socket.on('updated_message', function (data){
+                    $(".results-box").append("<p>" +
+                        data.response +
+                        "</p><br>"
+                    );
+
+                    ShowResults();
+                    ClearForm();
+                });  
+
+                socket.on('random_number', function(data){
+                    $(".results-box").append("<p>" +
+                        "Your lucky number emitted by the server is " + data.response +
+                        "</p>"
+                    );
+                });
+
+                function ShowResults(){
+                    $(".results-box").css("display", "inline-block");
+                }
+
+                function ClearForm(){
+                    $('input[name="name"]').val();
+                    $('select[name="location"]').val();
+                    $('select[name="language"]').val();
+                    $('textarea[name="comment"]').val();
+                }
+            })
+
+
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div style="height: 100px"></div>
+            <div class="results-box">
+
+            </div>
+            <div class="form-box">
+                <form class="myForm">
+                    <div>
+                        <label class="label-item">Your Name:</label>
+                        <input class="input-item" type='text' name='name'>
+                    </div>
+                    <div>
+                        <label class="label-item">Dojo Location:</label>
+                        <select class="input-item" name="location">
+                            <option value="Seattle">Seattle</option>
+                            <option value="Silicon Valley">Silicon Valley</option>
+                            <option value="Washington DC">Washington DC</option>
+                            <option value="Chicago">Chicago</option>
+                            <option value="Los Angeles">Los Angeles</option>
+                            <option value="Dallas">Dallas</option>
+                            <option value="Tulsa">Tulsa</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label-item">Favorite Langauge:</label>
+                        <select class="input-item" name='language'>
+                            <option value="Python">Python</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="C#">C#</option>
+                            <option value="C++">C++</option>
+                            <option value="Ruby">Ruby</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label-item">Comment (optional):</label>
+                        <textarea class="input-item" name="comment" cols="40" rows="5" placeholder=""></textarea>
+                    </div>              
+                    <div class="right">
+                        <input class="button-link submit-button" type='button' name="submit" value='Submit' class="button">
+                    </div>  
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

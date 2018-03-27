@@ -1,0 +1,9 @@
+{
+  "name": "Survey Form Revisited",
+  "dependencies": {
+    "ejs": "^2.5.8",
+    "express": "^4.16.3",
+    "socket.io": "^2.0.4",
+    "socketio": "^1.0.0"
+  }
+}

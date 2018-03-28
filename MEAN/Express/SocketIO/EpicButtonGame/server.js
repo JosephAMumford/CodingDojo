@@ -25,13 +25,14 @@ io.sockets.on('connection', function(socket){
     console.log("Client/socket is connected!");
     console.log("Client/socked id is: ", socket.id);
 
-    socket.on("posting_form", function (data){
-        let message = "You emitted the following information to the server: { name: " + data.name +
-        ", location: " + data.location + ", language: " + data.language + ", comment: " + data.comment + " }";
-        socket.emit('updated_message', {response: message});
-        
-        let num = Math.floor(Math.random() * 1000);
-        socket.emit('random_number', {response: num.toString() });
+    socket.on("button_clicked", function (data){
+        let num = parseInt(data.data);
+        num += 1;
+        socket.emit('updated_count', { response: num });
+    })
+
+    socket.on("reset", function(){
+        socket.emit('updated_count', { response: "0" })
     })
 })
 

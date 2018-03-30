@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <title>Group Chat</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type ="text/javascript">
+            $(document).ready(function (){
+
+                var socket  = io.connect();     // this triggers the connection event in our server!
+
+                socket.on('user_joined', function (data){
+                    let server_message = "";
+
+                    server_message += "<p> Server: " + data.username +
+                                        " has just joined the chat<p>";
+                    $('#chat-box-content').append(server_message);
+                });  
+
+                socket.on("display_message", function(data){
+                    let server_message = "";
+
+                    server_message += "<p><span style='color:" + data.user_color + "'>" + data.username + "</span>:&nbsp" + data.message + "</p>";
+
+                    $('#chat-box-content').append(server_message);
+                });
+
+                socket.on("display_old", function(data){
+                    
+                    for(let i = 0; i < data.length; i++){
+                        let server_message = "";
+                        
+                        console.log(i);
+                        console.log(data[i]);
+                        server_message += "<p><span style='color:" + data[i].user_color + "'>" + data[i].username + "</span>:&nbsp" + data[i].message + "</p>";
+
+                        $('#chat-box-content').append(server_message);
+                    } 
+                });
+
+                $('#login-button').click(function(){
+                    ProcessLogin();
+                });
+
+                $('#message-button').click(function(){
+                    ProcessMessage();
+
+                });
+
+                $(document).on("keypress", function (e) {
+                    if(e.which == 13){
+                        event.preventDefault();
+                        ProcessMessage();
+                    }
+                });
+
+                function ProcessMessage(){
+                    message_data = {
+                        username: sessionStorage.getItem("username"),
+                        user_color: sessionStorage.getItem("user_color"),
+                        message: $('#message').val()
+                    }
+                    socket.emit("message_submitted", message_data);
+
+                    message: $('#message').val("");
+                }
+
+                function ProcessLogin(){
+                    login_data = {
+                        username: $('#username').val(),
+                        user_color: $('#user_color').val()
+                    }
+                    socket.emit("user_login", login_data);
+
+                    sessionStorage.setItem("username",login_data.username);
+                    sessionStorage.setItem("user_color", login_data.user_color);
+                    sessionStorage.setItem("loggedIn", "true");
+
+                    $('.login-box').hide();
+                    $('.chat-box').css("display", "inline-block");
+                }
+            })
+
+
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="login-box center">
+                <form class="myForm">
+                    <h4>Please enter your name and color to join the chat!</h4>
+                    <div class="left">
+                        <label class="label-item">Your Name:</label>
+                        <input id="username" class="input-item" type='text' name='name'>
+                    </div>
+                    <div class="left">
+                        <label class="label-item">Color:</label>
+                        <select id="user_color" class="input-item" name="color">
+                            <option value="red">Red</option>
+                            <option value="orange">Orange</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="green">Green</option>
+                            <option value="blue">Blue</option>
+                            <option value="violet">Violet</option>
+                        </select>
+                    </div>      
+                    <div class="right">
+                        <input id="login-button" class="button-1" type='button' name="submit" value='Submit' class="button">
+                    </div>  
+                </form>
+            </div>
+            <div class="chat-box center">
+                <div class="chat-box-header">
+                    <h4>Welcome to the Dojo Communication Board</h4>
+                </div>
+                <div id="chat-box-content" class="left">
+
+                </div>
+                <div id="chat-box-submit" class="left">
+                    <input id="message" class="message-input" type='text' name='message' placholder="Enter your message here...">
+                    <input id="message-button" class="button-1" type='button' name="submit" value='Submit' class="button">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

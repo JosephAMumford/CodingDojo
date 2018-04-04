@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Mongoose Commands</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="form-box">
+                <form class="myForm" action='/users' method="POST">
+                    <div class="center">
+                        <h3>User Information</h3>
+                    </div>
+                    <div>
+                        <label class="label-item">Name:</label>
+                        <input class="input-item" type='text' name='name'>
+                    </div>
+                    <div>
+                        <label class="label-item">Age:</label>
+                        <input class="input-item" type='text' name='age'>
+                    </div>
+                    <div class="right">
+                        <input class="button-1" type='submit' name="submit" value='Submit' class="button">
+                    </div>  
+                </form>
+            </div>
+            <div>
+                <!-- All Users -->
+                <% for(let i = 0; i < user_list.length; i++){ %>
+                    <p>Name: <%= user_list[i].name %> </p>
+                    <p>Age: <%= user_list[i].age %></p>
+                <% } %>
+            </div>
+        </div>
+    </body>
+</html>

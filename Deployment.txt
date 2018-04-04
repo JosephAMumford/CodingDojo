@@ -225,6 +225,7 @@ WorkingDirectory=/home/ubuntu/{{repoName}}
 ExecStart=/home/ubuntu/{{repoName}}/venv/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/{{repoName}}/{{projectName}}.sock {{projectName}}.wsgi:application
 [Install]
 WantedBy=multi-user.target
+
 REMINDER: myRepoName is the name of the repo you cloned. projectName is the name of the folder that was used when you ran the django-admin startproject command. This folder is sibling to your apps folder.
 
 Now that our service file has been created, we can enable it so that it starts on boot with these commands.

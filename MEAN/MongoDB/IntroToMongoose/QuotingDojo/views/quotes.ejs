@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Quoting Dojo</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2 class="center">Here are the awesome quotes!</h2>
+            <div class="center"> 
+                <a href="/" class="button-1">Click to add a quote</a>
+            </div>  
+            <% for (let i = 0; i < users.length; i++) { %>
+            <div>
+                <h3>"<%= users[i].quote %>"</h3>
+                <p class="quote-name">-<%= users[i].name %> at <%= users[i].created_on %></p>
+                <hr>
+            </div>
+            <% } %>
+        </div>
+    </body>
+</html>

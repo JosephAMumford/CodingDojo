@@ -9,12 +9,15 @@ var app = express();
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/basic_mongoose');
+mongoose.connect('mongodb://localhost/quoting_dojo');
 mongoose.Promise = global.Promise;
+
 var UserSchema = new mongoose.Schema({
-    name: String,
-    age: Number
-})
+    name: {type: String},
+    quote: {type: String},
+    created_on : {type: Date, default: Date.now },
+},{timestamps: true });
+
 mongoose.model('User', UserSchema);
 var User = mongoose.model('User');
 
@@ -37,33 +40,34 @@ app.set('view engine', 'ejs');
 // Root Request
 app.get('/', function(req, res) {
 
-    let context = {};
+    res.render('index');
+})
 
+
+//Get Quotes
+app.get('/quotes', function(req, res){
     User.find({}, function(err, users) {
-
         if(err){
-            console.log("database retrieval error");
+            console.log("an error");
+            res.render('error', {errors: err})
         }
         else{
-            res.render('index', {user_list: users});
+            res.render('quotes', { users });
         }
     })
 })
 
-// Add User Request 
-app.post('/users', function(req, res) {
-    console.log("POST DATA", req.body);
-    // This is where we would add the user from req.body to the database.
-
-    var user = new User({name: req.body.name, age: req.body.age});
+//Add Quotes
+app.post('/quotes', function(req, res) {
+    
+    var user = new User({name: req.body.name, quote: req.body.quote});
 
     user.save(function(err){
         if(err){
-            console.log("Something went wrong");
+            res.render('error', {errors: err})
         }
         else {
-            console.log("Successfully added user!");
-            res.redirect('/');
+            res.redirect('/quotes');
         }
     })
 })

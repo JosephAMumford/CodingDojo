@@ -18,22 +18,30 @@
                         <h3>User Information</h3>
                     </div>
                     <div>
-                        <label class="label-item">Name:</label>
-                        <input class="input-item" type='text' name='name'>
+                        <label class="label-item">First Name:</label>
+                        <input class="input-item" type='text' name='first_name'>
+                    </div>
+                    <div>
+                        <label class="label-item">Last Name:</label>
+                        <input class="input-item" type='text' name='last_name'>
                     </div>
                     <div>
                         <label class="label-item">Age:</label>
                         <input class="input-item" type='text' name='age'>
+                    </div>
+                    <div>
+                        <label class="label-item">Name:</label>
+                        <input class="input-item" type='text' name='email'>
                     </div>
                     <div class="right">
                         <input class="button-1" type='submit' name="submit" value='Submit' class="button">
                     </div>  
                 </form>
             </div>
-            <div>
+            <div> 
                 <!-- All Users -->
                 <% for(let i = 0; i < user_list.length; i++){ %>
-                    <p>Name: <%= user_list[i].name %> </p>
+                    <p>Name: <%= user_list[i].first_name %> </p>
                     <p>Age: <%= user_list[i].age %></p>
                 <% } %>
             </div>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Quoting Dojo</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="form-box">
+                <form class="myForm" action='/quotes' method="POST">
+                    <div class="center">
+                        <h1>Welcome to Quoting Dojo</h1>
+                    </div>
+                    <div>
+                        <label class="label-item">Your Name:</label>
+                        <input class="input-item" type='text' name='name'>
+                    </div>
+                    <div>
+                        <label class="label-item">Your Quote:</label>
+                        <textarea class="input-item" name="quote" cols="40" rows="5" placeholder=""></textarea>
+                    </div>
+                    <div class="left" style="display:inline-block; width: 49%">
+                        <input class="button-1" type='submit' name="submit" value='Add my quote!' class="button">
+                    </div>
+                    <div class="right"style="display:inline-block; width: 49%"> 
+                        <a href="/quotes" class="button-1">Skip to quotes!</a>
+                    </div>    
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

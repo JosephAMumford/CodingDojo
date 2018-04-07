@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sandworm Dashboard</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="form-box">
+                <form class="myForm" action='/sandworms' method="POST">
+                    <h1 class="center">Add new sandworm</h1>
+                    <div>
+                        <label class="label-item">Name:</label>
+                        <input class="input-item" type='text' name='name'>
+                    </div>
+                    <div>
+                        <label class="label-item">Region:</label>
+                        <select class="input-item" name='region'>
+                            <option>The Great Flat</option>
+                            <option>Palmaries of the South</option>
+                            <option>Habbanya Erg</option>
+                            <option>The Funeral Plain</option>
+                            <option>Imperial Basin</option>
+                            <option>Sheild Wall</option>
+                            <option>The Minor Erg</option>
+                            <option>Cielago Depression</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label-item">Age:</label>
+                        <input class="input-item" type='number' name='age'>
+                    </div>
+                    <div>
+                        <label class="label-item">Mass:</label>
+                        <input class="input-item" type='number' name='mass'>
+                    </div>
+                    <div>
+                        <label class="label-item">Length:</label>
+                        <input class="input-item" type='number' name='length'>
+                    </div>
+                    <div class="right">
+                        <input class="button-1" type='submit' name="submit" value='Add Sandworm' class="button">
+                        <a href="/" class="button-1 center">Cancel</a>
+                    </div>  
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

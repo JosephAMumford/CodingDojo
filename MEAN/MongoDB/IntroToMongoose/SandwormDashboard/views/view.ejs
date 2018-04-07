@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sandworm Dashboard</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div>
+                <h1 class="center">Sandworms of Arrakis</h1>
+            </div>
+            <div class="user-table">
+                <table style="width:50%">
+                    <tr>
+                        <th colspan="2">Sandworm Information</th>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td class="center"><%= sandworm.name %></td>
+                    </tr>
+                    <tr>
+                        <td>Region</td>
+                        <td class="center"><%= sandworm.region %></td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td class="center"><%= sandworm.age %> years</td>
+                    </tr>
+                    <tr>
+                        <td>Mass</td>
+                        <td class="center"><%= sandworm.mass %> tons</td>
+                    </tr>
+                    <tr>
+                        <td>Length</td>
+                        <td class="center"><%= sandworm.length %> meters</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="right">
+                                <a href="/" class="button-2">Home</a>
+                                <a href="/sandworms/edit/<%= sandworm._id %>" class="button-2">Edit</a>
+                                <form method="post" action="/sandworms/destroy/<%= sandworm._id %>" class="inline-form">
+                                    <button type="submit" name="submit_param" value="submit_value" class="button-2">Delete</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

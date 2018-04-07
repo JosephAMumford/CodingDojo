@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sandworm Dashboard</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div>
+                <h1 class="center">Sandworms of Arrakis</h1>
+                <div class="center">
+                    <a href="/sandworms/new" class="button-2">Add Sandworm</a>
+                </div>
+            </div>
+            <div class="user-table">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Region</th>
+                        <th width="10%">Age</th>
+                        <th width="10%">Mass</th>
+                        <th width="10%">Length</th>
+                        <th width="20%">Actions</th>
+                    </tr>
+                    <% for (const worm of sandworms){%>
+                    <tr>
+                        <td><%= worm.name %></td>
+                        <td><%= worm.region %></td>
+                        <td class="center"><%= worm.age %> years</td>
+                        <td class="center"><%= worm.mass %> tons</td>
+                        <td class="center"><%= worm.length %> meters</td>
+                        <td>
+                            <a href="/sandworms/<%= worm._id %>" class="button-2">View</a>
+                            <a href="/sandworms/edit/<%= worm._id %>" class="button-2">Edit</a>
+                            <form method="post" action="/sandworms/destroy/<%= worm._id %>" class="inline-form">
+                                <button type="submit" name="submit_param" value="submit_value" class="button-2">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

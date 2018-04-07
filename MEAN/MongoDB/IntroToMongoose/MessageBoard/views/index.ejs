@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Message Board</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- Title -->
+            <div>
+                <h2>The Dojo Message Board</h2>
+                <hr>
+            </div>
+            <!-- Add Post -->
+            <div>
+                <form class="myForm" action='/message' method="POST">
+                    <div>
+                        <label class="label-item">Name:</label>
+                        <input class="input-item" type='text' name='name'>
+                    </div>
+                    <div>
+                        <label class="label-item">Message:</label>
+                        <textarea class="input-item" name="text" cols="80" rows="4" placeholder=""></textarea>
+                    </div>
+                    <div class="right">
+                        <input class="button-1" type='submit' name="submit" value='Post Message' class="button">
+                    </div>  
+                </form>
+            </div>
+            <!-- POST liST -->
+            <% for(let i = 0; i < posts.length; i++) { %>
+            <div class="post-box">
+                <h3>Name: <%= posts[i].name %></h3>
+                <h3>Message: <%= posts[i].text %></h3>
+                <div class="left">
+                    <% for(let j = 0; j < posts[i].comments.length; j++) { %>
+                        <h4 class="comment">Name: <%= posts[i].comments[j].name %></h4>
+                        <h4 class="comment">Comment: <%= posts[i].comments[j].text %></h4>
+                    <% } %>
+                    <form class="myForm" action='/posts/<%= posts[i]._id %>' method="POST">
+                        <div>
+                            <label class="label-item">Name:</label>
+                            <input class="input-item" type='text' name='name'>
+                        </div>
+                        <div>
+                            <label class="label-item">Comment:</label>
+                            <textarea class="input-item" name="text" cols="80" rows="2" placeholder=""></textarea>
+                        </div>
+                        <div class="right">
+                            <input class="button-1" type='submit' name="submit" value='Post Comment' class="button">
+                        </div>  
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <% } %>
+        </div>
+    </body>
+</html>

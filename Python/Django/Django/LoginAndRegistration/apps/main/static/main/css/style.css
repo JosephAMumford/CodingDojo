@@ -16,23 +16,22 @@
 #button-box {
     display:inline-block;
     margin: 20px;
-    width: 500px;
 }
+
 #login-box {
     display: none;
-    padding: 10px 0px 5px 0px;
+    padding: 10px;
     border: 1px solid black;
     margin: 20px;
-    width: 500px;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 #register-box {
     display: none;
     margin: 20px;
+    padding: 10px;
     border: 1px solid black;
-    width: 500px;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 .messages-error {

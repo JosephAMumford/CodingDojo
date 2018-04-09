@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Login and Registration</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div>
+                    <h2>Login and Registration</h2>
+                </div>
+                <div class="right">
+                    <label>Logged in as <%= main.first_name %> <%= main.last_name %></label>
+                    <a href="/logout" class="button-2">Logout</a>
+                </div>
+            </div>
+
+            <div class="user-table">
+                <table>
+                    <tr>
+                        <!-- <th>User ID</th> -->
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Birthdate</th>
+                        <th width="20%">Created On</th>
+                        <th width="20%">Actions</th>
+                    </tr>
+                    <% for(let i = 0; i < users.length; i++) { %>
+                    <tr>
+                        <!-- <td><%= users[i]._id %></td> -->
+                        <td><%= users[i].first_name %> <%= users[i].last_name %></td>
+                        <td><%= users[i].email %></td>
+                        <td><%= users[i].birthday %></td>
+                        <td><%= users[i].created_on %></td>
+                        <td>
+                        <form class="my-form" action='/users/<%= users[i]._id %>', method='get'> 
+                            <button type="submit" name="submit_param" value="submit_value" class="button-2">View</button>
+                        </form>    
+                        <form class="my-form" action='/edit/<%= users[i]._id %>', method='get'> 
+                            <button type="submit" name="submit_param" value="submit_value" class="button-2">Edit</button>
+                        </form>            
+                        <form class="my-form" action='/destroy/<%= users[i]._id %>', method='post'>
+                            <button type="submit" name="submit_param" value="submit_value" class="button-2">Delete</button>
+                        </form>
+                        </td>
+                    </tr>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

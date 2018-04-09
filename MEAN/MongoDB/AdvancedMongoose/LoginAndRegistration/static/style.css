@@ -1,0 +1,141 @@
+* {
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrapper {
+    width: 1000px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+#header {
+    display: inline;
+    text-align: left;
+}
+
+#button-box {
+    display:inline-block;
+    margin: 0px auto;
+}
+
+h1,h2, h3, h4, h5 {
+    margin: 10px;
+}
+
+.comment {
+    margin: 10px 10px 10px 50px;
+}
+
+.quote-text {
+    margin: 10px;
+}
+
+.quote-name {
+    margin: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.form-box {
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.my-form {
+    display: inline-block;
+}
+    .label-item {
+        display:inline-block;
+        padding-top: 5px;
+        text-align: right;
+        width: 139px;
+    }
+
+    .input-item {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display:inline-block; 
+        vertical-align:middle;
+        margin-left:20px
+    }
+
+.button-1 {
+    display: inline-block;
+    background-color: rgb(99, 186, 226);
+    color: white;
+    font-size: 10pt;
+    border:1px solid rgb(81, 151, 184);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.button-2 {
+    display: inline-block;
+    background-color: rgb(99, 186, 226);
+    color: white;
+    font-size: 10pt;
+    border:1px solid rgb(81, 151, 184);
+    border-radius: 3px;
+    padding: 5px;
+    margin: 5px;
+    text-decoration: none;
+}
+/* TABLE */
+.user-table table{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 51%);
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+    .user-table td, .user-table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .user-table tr:nth-child(even){background-color: #f2f2f2;}
+
+    .user-table tr:hover {background-color: #ddd;}
+
+    .user-table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: rgb(99, 186, 226);
+        color: white;
+    }
+
+
+#login-box {
+    display: none;
+    padding: 10px 0px 5px 0px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+#register-box {
+    display: none;
+    border: 1px solid black;
+    border-radius: 3px;
+}

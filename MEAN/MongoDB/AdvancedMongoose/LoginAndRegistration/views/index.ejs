@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Login and Registration</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="/script.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <h1 class="left">Login and Registration</h1>
+            </div>
+            <hr>
+            <div id="button-box">
+                <button class="button-1" name="login" type="button">Login</button>
+                <button class="button-1" name="register" type="button">Register</button>
+            </div>
+            <br>
+            <div id="login-box">
+                <h2>Enter your information to login</h2>
+                <form class="myForm" action='login', method='post'>
+                    <div class="form-item">
+                        <label class="label-item">Email:</label>
+                        <input class="input-item" type='text' name='email'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Password</label>
+                        <input class="input-item" type='password' name='password'>
+                    </div>
+                    <div class="right">
+                        <input class="button-1" type='submit' name="formAction" value='Login' class="button">
+                    </div>
+                </form>
+            </div>
+            <br>
+            <div id="register-box">
+                <h2>Enter your information to register</h2>
+                <form class="myForm" action='/users', method='post'>
+                    <div class="form-item">
+                        <label class="label-item">First Name:</label>
+                        <input class="input-item" type='text' name='first_name'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Last Name:</label>
+                        <input class="input-item" type='text' name='last_name'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Email Address:</label>
+                        <input class="input-item" type='text' name='email'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Birthday:</label>
+                        <input class="input-item" type='text' name='birthday'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Password:</label>
+                        <input class="input-item" type='password' name='password'>
+                    </div>
+                    <div class="form-item">
+                        <label class="label-item">Confirm Password:</label>
+                        <input class="input-item" type='password' name='confirm_password'>
+                    </div>
+                    <div class="right">
+                        <input class="button-1" type='submit' name="formAction" value='Register' class="button">
+                    </div>
+                </form>
+            </div>
+            <!--<br>
+            <div style="text-align: center; padding:20px">
+                <a href="/users" class="button-1">Show Users</a>
+            </div>-->
+        </div>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sandworm Dashboard</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div>
+                    <h2>Login and Registration</h2>
+                </div>
+                <div class="right">
+                    <label>Logged in as <%= main.first_name %> <%= main.last_name %></label>
+                    <a href="/logout" class="button-2">Logout</a>
+                </div>
+            </div>
+            <div>
+                <h1 class="center">View User</h1>
+            </div>
+            <div class="user-table">
+                <table style="width:50%">
+                    <tr>
+                        <th colspan="2">User Information</th>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td class="center"><%= user.first_name %> <%= user.last_name %></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td class="center"><%= user.email %></td>
+                    </tr>
+                    <tr>
+                        <td>Birthday</td>
+                        <td class="center"><%= user.birthday %></td>
+                    </tr>
+                    <tr>
+                        <td>Created On</td>
+                        <td class="center"><%= user.created_on %></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="right">
+                                <a href="/users" class="button-2">Home</a>           
+                                <form class="my-form" action='/destroy/<%= user._id %>', method='post'>
+                                    <button type="submit" name="submit_param" value="submit_value" class="button-2">Delete</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

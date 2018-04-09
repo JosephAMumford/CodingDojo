@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Login and Registration</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div>
+                    <h2>Login and Registration</h2>
+                </div>
+                <div class="right">
+                    <label>Logged in as <%= main.first_name %> <%= main.last_name %></label>
+                    <a href="/logout" class="button-2">Logout</a>
+                </div>
+            </div>
+            <div class="form-box">
+                <form class="myForm" action='/users/<%= user._id %>' method="POST">
+                    <h1 class="center">Edit user</h1>
+                    <div>
+                        <label class="label-item">First Name:</label>
+                        <input class="input-item" type='text' name='first_name' value="<%= user.first_name %>">
+                    </div>
+                    <div>
+                        <label class="label-item">Last Name:</label>
+                        <input class="input-item" type='text' name='last_name' value="<%= user.last_name %>">
+                    </div>
+                    <div>
+                        <label class="label-item">Email:</label>
+                        <input class="input-item" type='text' name='email' value="<%= user.email %>">
+                    </div>
+                    <div>
+                        <label class="label-item">Birthday:</label>
+                        <input class="input-item" type='text' name='birthday' value="<%= user.birthday %>">
+                    </div>      
+                    <div class="right">
+                        <input class="button-1" type='submit' name="submit" value='Save user' class="button">
+                        <a href="/users" class="button-1 center">Cancel</a>
+                    </div>  
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

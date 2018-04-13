@@ -1,0 +1,32 @@
+.mailbox {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.margin-5 {
+    margin: 5px;
+}
+
+/* TABLE */
+.user-table table{
+    border-collapse: collapse;
+    text-align: left;
+}
+
+    .user-table td, .user-table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .user-table tr:nth-child(even){background-color: #f2f2f2;}
+
+    .user-table tr:hover {background-color: #ddd;}
+
+    .user-table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: rgb(99, 186, 226);
+        color: white;
+    }

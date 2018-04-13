@@ -1,0 +1,19 @@
+<div [ngClass]="{ 'mailbox':true, 'user-table':true, 'margin-5':true }">
+  <h1 [ngClass]="{ 'margin-5':true }">Dojo Mail</h1>
+  <table [ngClass]="{ 'margin-5':true }">
+      <tr>
+        <th>Email</th>
+        <th>Importance</th>
+        <th>Subject</th>
+        <th>Content</th>
+      </tr>
+      <tr *ngFor='let user of users'>
+        <td>{{ user.email | lowercase }}</td>
+        <td *ngIf='user.importance'>High</td>
+        <td *ngIf = '!user.importance'>Low</td>
+        <td>{{ user.subject }}</td>
+        <td>{{ user.content }}</td>
+      </tr>
+
+  </table>
+</div>

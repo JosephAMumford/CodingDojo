@@ -1,0 +1,11 @@
+<h1>US Time Zone Display</h1>
+
+<div>
+  <button [ngClass]="getClass(3)" (click)="getCurrentTime(3)" class="button-a">PST</button>
+  <button [ngClass]="getClass(2)" (click)="getCurrentTime(2)" class="button-a">MST</button>
+  <button [ngClass]="getClass(1)" (click)="getCurrentTime(1)" class="button-a">CST</button>
+  <button [ngClass]="getClass(0)" (click)="getCurrentTime(0)" class="button-a">EST</button>
+
+  <h3>{{ current_time | date: 'medium' : time_zone }}</h3>
+</div>
+

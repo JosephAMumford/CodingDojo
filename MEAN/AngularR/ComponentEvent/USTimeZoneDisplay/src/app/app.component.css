@@ -1,0 +1,17 @@
+* {
+  text-align: center;
+}
+
+.active-button {
+  background-color: yellow;
+}
+
+.inactive-button {
+  background-color: lightgray;
+}
+
+.button-a {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 3px;
+}

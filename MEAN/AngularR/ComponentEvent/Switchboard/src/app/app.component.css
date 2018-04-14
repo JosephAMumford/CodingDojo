@@ -1,0 +1,32 @@
+* {
+  font-family: sans-serif;
+}
+
+.center {
+  text-align: center;
+}
+
+.box {
+  display: inline-block;
+  background-color: brown;
+  padding:32px;
+}
+
+.on {
+  background-color: green;
+  color: white;
+}
+
+.off {
+  background-color: red;
+  color: white;
+}
+
+.button-a {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  font-weight: 800;
+  font-size: 16pt;
+}
+

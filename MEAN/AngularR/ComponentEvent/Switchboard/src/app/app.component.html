@@ -1,0 +1,9 @@
+<h1 class="center">Switchboard</h1>
+
+<div class="center">
+  <div *ngFor='let number of [0,1,2,3,4,5,6,7,8,9]; let idx = index' class="box">
+    <button *ngIf = 'switchboard[idx]' (click)="press_button(idx)" class="on button-a">On</button>
+    <button *ngIf = '!switchboard[idx]' (click)="press_button(idx)" class="off button-a">Off</button>
+  </div>
+</div>
+

@@ -1,0 +1,21 @@
+<div>
+  <form id="registration-form" (submit)="onSubmit()" #formData='ngForm'>
+    <div class="form-box">
+      <h1 class="center">Add a quote</h1>
+      <div>
+        <label class="label-item">Quote</label>
+        <textarea class="input-item" name="text" rows="4" cols="40" required minlength="4" [(ngModel)]="quote.text" #text='ngModel'></textarea>
+        <label *ngIf='text.errors && text.dirty' class="error">Required Field: Quote must be at least 4 characters</label>
+      </div>
+      <div>
+        <label class="label-item">Author</label>
+        <input class="input-item" type="text" name="author" size="32" required minlength="1" [(ngModel)]="quote.author" #author='ngModel' />
+        <label *ngIf='author.errors && author.dirty' class="error">Required Field: Author must be at least 1 characters</label>
+      </div>
+      <div class="center">
+        <input *ngIf='formData.valid' (click) = 'triggerEvent($event); formData.reset()' class="form-complete form-submit" type="submit" value="Add Quote">
+        <input *ngIf='!formData.valid' (click) = 'triggerEvent($event); formData.reset()' class="form-incomplete form-submit" type="submit" value="Add Quote">
+      </div>
+    </div>
+  </form>
+</div>

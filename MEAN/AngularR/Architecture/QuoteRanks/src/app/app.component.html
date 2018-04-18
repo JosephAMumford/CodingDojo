@@ -1,0 +1,4 @@
+<div id="wrapper">
+  <app-quote-form (aTaskEventEmitter)="dataFromChild($event)"></app-quote-form>
+  <app-quote-list [quotesList]='quotes' (aTaskEventEmitter)="processButton($event)"></app-quote-list>
+</div>

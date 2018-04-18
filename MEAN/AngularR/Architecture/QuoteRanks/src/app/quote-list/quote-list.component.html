@@ -1,0 +1,18 @@
+<div>
+  <h2 class="center">Quotes List</h2>
+  <hr>
+  <div *ngFor='let quote of quotesList; let idx = index' class="quote-box">
+    <div class="inline-b quote-content">
+      <p>{{ quote.text }}</p>
+      <p>- {{ quote.author }}</p>
+    </div>
+    <div class="inline-b quote-votes">
+      <h1 class="center">{{quote.votes}}</h1>
+    </div>
+    <div class="inline-b quote-control">
+      <button (click) = 'triggerEvent(idx, 0)' class="control-button color-up">Upvote</button>
+      <button (click) = 'triggerEvent(idx, 1)' class="control-button color-down">Downvote</button>
+      <button (click) = 'triggerEvent(idx, 2)' class="control-button color-del">Delete</button>
+    </div>
+  </div>
+</div>

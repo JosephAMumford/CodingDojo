@@ -1,0 +1,62 @@
+
+.center {
+  text-align: center;
+}
+
+.inline-b {
+  display: inline-block;
+}
+
+.quote-box {
+  display: inline-block;
+  position: relative;
+  width: 800px;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-49%, 0%);
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.quote-content {
+  width: 650px;
+}
+
+.quote-votes {
+  position: relative;
+  width: 50px;
+  left: 0%;
+  bottom: 0%;
+  transform: translate(0%, -30%);
+}
+.quote-control {
+  width: 80px;
+}
+
+.control-button {
+  width: 80px;
+  height: 24px;
+  border:1px solid black;
+  margin: 5px;
+}
+
+.color-up {
+  background-color: green;
+  color:white;
+
+}
+
+.color-down {
+  background-color: red;
+  color:white;
+
+}
+
+.color-del {
+  background-color: rgb(51, 51, 51);
+  color:white;
+}
+
+

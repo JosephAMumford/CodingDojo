@@ -1,0 +1,14 @@
+.beta {
+  text-align: center;
+  vertical-align: top;
+  margin: 10px;
+  padding: 5px;
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  background-color: blue;
+  color: white;
+  font-weight: 600;
+  font-size: 18pt;
+
+}

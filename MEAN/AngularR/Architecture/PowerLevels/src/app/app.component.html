@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <h3>Power Levels</h3>
+  <form Class="my-form" (submit)="onSubmit()" #formData='ngForm'>
+    <div>
+      <label class="label-item">Initial Power Level:</label>
+      <input class="input-item" type="number" value="1" min="1" max="100" name="level" [(ngModel)]="myPowerLevel.level" #level='ngModel'/>
+      <button type="submit">Calculate Powers</button>
+    </div>
+  </form>
+  <div class="component-box">
+    <app-sub [value]='power' [type]='type[0]'></app-sub>
+    <app-sub [value]='power' [type]='type[1]'></app-sub>
+    <app-sub [value]='power' [type]='type[2]'></app-sub>
+    <app-sub [value]='power' [type]='type[3]'></app-sub>
+    <app-sub [value]='power' [type]='type[4]'></app-sub>
+    <app-sub [value]='power' [type]='type[5]'></app-sub>
+  </div>
+
+</div>
+
+
+

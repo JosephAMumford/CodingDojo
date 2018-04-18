@@ -1,0 +1,28 @@
+.wrapper {
+  width: 680px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.my-form {
+  display: inline-block;
+}
+
+  .label-item {
+    display: inline-block;
+    padding-top: 5px;
+    text-align: right;
+    width: 141px;
+  }
+
+  .input-item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px
+  }
+
+  .component-box {
+
+  }

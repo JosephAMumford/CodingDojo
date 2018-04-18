@@ -1,0 +1,10 @@
+<div class="box">
+  <h3>{{ sub_type }}</h3>
+  <h2>{{ sub_value | number }}</h2>
+
+  <h1 *ngIf='(sub_value > 9000 && sub_value < 20000)'>Over 9000!</h1>
+  <h1 *ngIf='(sub_value > 20000 && sub_value != 50000)'>Superlative!</h1>
+  <h1 *ngIf='(sub_value == 50000)'>The one</h1>
+
+</div>
+

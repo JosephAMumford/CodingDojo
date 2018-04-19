@@ -1,0 +1,19 @@
+.building-box {
+  text-align: center;
+  vertical-align: top;
+  display: inline-block;
+  width: 300px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 5px;
+}
+
+.building-button {
+  background-color: rgb(104, 146, 201);
+  color: white;
+  border: 1px solid rgb(95, 134, 185);
+  border-radius: 3px;
+  padding: 5px;
+  vertical-align: bottom;
+}

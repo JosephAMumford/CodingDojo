@@ -1,0 +1,8 @@
+<div class="score-box">
+  <h2>Your Score: {{ dataService.score }} </h2>
+  <h3 *ngIf='(dataService.score < 20)' style="color:red" class="center">Needs work!</h3>
+  <h3 *ngIf='(dataService.score >= 20 && dataService.score < 50)' style="color:orange" class="center">A decent start!</h3>
+  <h3 *ngIf='(dataService.score >= 50 && dataService.score < 100)' style="color:black" class="center">Doing good!</h3>
+  <h3 *ngIf='(dataService.score >= 100 && dataService.score < 200)' style="color:green" class="center">Great job!</h3>
+  <h3 *ngIf='(dataService.score >= 200)' style="color:blue" class="center">GitHub Elite!</h3>
+</div>

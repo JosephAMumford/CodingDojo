@@ -1,0 +1,11 @@
+.form-box {
+  display: inline-block;
+  width: 320px;
+}
+
+.form-button {
+  margin: 5px 0px;
+  background-color: green;
+  color: white;
+  width: 310px;
+}

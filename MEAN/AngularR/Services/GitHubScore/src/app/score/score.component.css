@@ -1,0 +1,9 @@
+.score-box {
+  padding: 10px;
+  display: inline-block;
+  height: 110px;
+}
+
+.center {
+  text-align: center;
+}

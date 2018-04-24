@@ -1,0 +1,13 @@
+#wrapper {
+  text-align: center;
+  width: 650px;
+  margin: 0 auto;
+}
+
+.link-box {
+  margin: 10px;
+}
+
+a {
+  margin: 5px;
+}

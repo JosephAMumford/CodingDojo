@@ -1,0 +1,18 @@
+<div class="main-box">
+  <h2 class="center">{{ data.name }}</h2>
+  <div class="info-box">
+    <p>Humidity: {{ data.main.humidity }}%</p>
+    <p>Temperature (Average): {{ data.main.temp }}° F</p>
+    <p>Temperature (High): {{ data.main.temp_max }}° F</p>
+    <p>Temperature (Low): {{ data.main.temp_min }}° F</p>
+    <p>Status: {{ data.weather[0].description }}</p>
+  </div>
+  <div class="picture-box">
+    <img *ngIf="(data.name == 'Burbank')" src="assets/burbank.jpg" alt="burbank.jpeg" width="256" height="256">
+    <img *ngIf="(data.name == 'Chicago')" src="assets/chicago.jpeg" alt="chicago.jpeg" width="256" height="256">
+    <img *ngIf="(data.name == 'Dallas')" src="assets/dallas.jpeg" alt="dallas.jpeg" width="256" height="256">
+    <img *ngIf="(data.name == 'San Jose')" src="assets/sanjose.JPG" alt="sanjose.jpeg" width="256" height="256">
+    <img *ngIf="(data.name == 'Seattle')" src="assets/seattle.jpeg" alt="seattle.jpeg" width="256" height="256">
+    <img *ngIf="(data.name == 'District of Columbia')" src="assets/washingtondc.jpeg" alt="washingtondc.jpeg" width="256" height="256">
+  </div>
+</div>

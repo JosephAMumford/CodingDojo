@@ -1,0 +1,25 @@
+.main-box {
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.info-box {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  padding: 15px;
+  width: 290px;
+}
+
+.picture-box {
+  width: 256px;
+  display: inline-block;
+  margin:10px;
+}
+
+
+.center {
+  text-align: center;
+}

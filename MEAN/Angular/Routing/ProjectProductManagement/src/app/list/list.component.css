@@ -1,0 +1,52 @@
+.product-box {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.product-image {
+  display: inline-block;
+  background-color: lightslategray;
+  width:200px;
+  height:200px;
+}
+
+.center {
+  text-align: center;
+}
+
+.action-button {
+  display: block;
+  width: 200px;
+  height: 24px;
+  text-decoration: none;
+  margin: 5px 0px;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.ft-size-12 {
+  font-size: 12pt;
+}
+
+.ft-size-14 {
+  font-size: 14pt;
+}
+
+.ft-size-16 {
+  font-size: 16pt;
+}
+
+.color-green {
+  background: green;
+  color: white;
+}
+
+.color-red {
+  background: red;
+  color: white;
+}

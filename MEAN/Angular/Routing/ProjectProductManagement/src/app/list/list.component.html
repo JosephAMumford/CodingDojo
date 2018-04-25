@@ -1,0 +1,11 @@
+<div>
+  <div *ngFor='let product of _dataService.product_list' class="product-box">
+    <div class="product-image center">{{ product.image }}</div>
+    <p class="bold ft-size-14">{{ product.name }}</p>
+    <p class="ft-size-12">{{ product.price }}</p>
+    <div class="center">
+      <button [routerLink]="['edit/', product.id ]" class="action-button color-green bold ft-size-12">Edit</button>
+      <button (click)="deleteProduct( product.id )" class="action-button color-red bold ft-size-12">Delete</button>
+    </div>
+  </div>
+</div>

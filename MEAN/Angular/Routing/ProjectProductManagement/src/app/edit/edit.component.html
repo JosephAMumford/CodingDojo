@@ -1,0 +1,24 @@
+<div class="form-box">
+  <h3>Edit Product</h3>
+  <form id="product-form" #formData='ngForm'>
+    <div>
+      <label class="label-item">Product Name</label>
+      <input class="input-item" type="text" name="name" placeholder="{{ current_item.name }}" value="{{ current_item.name }}" required minlength="4" maxlength="24" [(ngModel)]="new_item.name" #name='ngModel'/>
+      <label *ngIf='name.errors && name.dirty' class="error">Required Field: First name must be at least 4 characters</label>
+    </div>
+    <div>
+      <label class="label-item">Price</label>
+      <input class="input-item" type="text" name="price" placeholder="{{ current_item.price }}" value="{{ current_item.price }}" required minlength="5" maxlength="24" [(ngModel)]="new_item.price" #price='ngModel'/>
+      <label *ngIf='price.errors && price.dirty' class="error">Required Field: Price must be at least $d.cc</label>
+    </div>
+    <div>
+      <label class="label-item">Image URL</label>
+      <input class="input-item" type="text" name="image" placeholder="{{ current_item.image }}" value="{{ current_item.image }}" [(ngModel)]="new_item.image" #image='ngModel' />
+    </div>
+    <div class="center">
+      <input *ngIf='formData.valid' (click)='triggerEvent($event); formData.reset()' class="form-complete form-submit ft-size-12" type="button" value="Update">
+      <input *ngIf='!formData.valid' class="form-incomplete form-submit ft-size-12" type="button" value="Update">
+      <input [routerLink]="['/products']" type="button" class="cancel form-submit ft-size-12" value="Cancel">
+    </div>
+  </form>
+</div>

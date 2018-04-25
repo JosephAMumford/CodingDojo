@@ -1,0 +1,85 @@
+.ng-invalid {}
+
+.ng-valid {}
+
+.ng-untouched {}
+
+.ng-touched {}
+
+.ng-dirty {}
+
+.ng-pristine {}
+
+.my-form {
+  display: inline-block;
+}
+
+.label-item {
+  display: inline-block;
+  padding-top: 5px;
+  text-align: right;
+  width: 141px;
+}
+
+.input-item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px
+}
+
+.form-box {
+  display: inline-block;
+  position: relative;
+  width: 800px;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-49%, 0%);
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.form-submit {
+  margin-top: 10px;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 14pt;
+}
+
+.cancel {
+  background-color: blue;
+  color: white;
+}
+
+.form-complete {
+  background-color: green;
+  color: white;
+}
+
+.form-incomplete {
+  background-color: grey;
+  color: white;
+}
+
+.center {
+  text-align: center;
+}
+
+.box {
+  display: inline-block;
+  border: 1px solid black;
+  color: green;
+  padding: 5px;
+  margin: 10px;
+}
+
+.error {
+  color: red;
+}
+
+
+.ft-size-12 {
+  font-size: 12pt;
+}

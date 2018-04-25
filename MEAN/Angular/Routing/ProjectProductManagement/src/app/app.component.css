@@ -1,0 +1,17 @@
+* {
+  font-family: sans-serif;
+}
+
+#wrapper {
+  width: 820px;
+  margin: 0 auto;
+}
+
+.link-box {
+  text-align: center;
+  margin: 10px;
+}
+
+a {
+  padding: 5px;
+}

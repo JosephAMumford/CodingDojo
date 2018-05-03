@@ -1,0 +1,40 @@
+.box {
+  display: inline-block;
+  padding: 5px;
+  width: 700px;
+  vertical-align: top;
+}
+
+.image-box {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+  vertical-align: top;
+}
+
+.info-box {
+  display: inline-block;
+  vertical-align: top;
+  width: 250px;
+}
+
+.action-box {
+  display: inline-block;
+  vertical-align: top;
+  width: 90px;
+}
+
+.input-box {
+  display: inline-block;
+  vertical-align: top;
+  width: 150px;
+}
+
+.input-width {
+  width: 40px;
+}
+
+.center {
+  text-align: center;
+}

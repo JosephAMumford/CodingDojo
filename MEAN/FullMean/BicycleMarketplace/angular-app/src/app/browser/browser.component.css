@@ -1,0 +1,43 @@
+.box {
+  display: inline-block;
+  padding: 5px;
+  width: 500px;
+  vertical-align: top;
+}
+
+.image-box {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+  vertical-align: top;
+}
+
+.info-box {
+  display: inline-block;
+  vertical-align: top;
+  width: 300px;
+}
+
+.action-box {
+  display: inline-block;
+  vertical-align: top;
+  width: 90px;
+}
+
+.search-box {
+  margin: 20px 0px;
+  display: inline-block;
+  width: 500px;
+  vertical-align: top;
+}
+
+.search-bar {
+  display: inline-block;
+  width: 500px;
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}

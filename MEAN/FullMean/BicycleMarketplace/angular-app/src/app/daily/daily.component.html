@@ -1,0 +1,17 @@
+<div class="daily-box">
+  <h2 style="color: blue; text-align: left">Bike of the Day!</h2>
+  <div class="box">
+    <div class="image-box">
+      Image: {{ listing[0]?.image }}
+    </div>
+    <div class="info-box">
+      <h2>{{ listing[0]?.title }}</h2>
+      <span>{{ listing[0]?.description }}</span>
+    </div>
+    <div class="action-box">
+      <h2>${{ listing[0]?.price }}</h2>
+      <span>{{ listing[0]?.location }}</span>
+    </div>
+  </div>
+</div>
+

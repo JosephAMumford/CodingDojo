@@ -1,0 +1,15 @@
+<div id="wrapper">
+  <h1>Bicycle Marketplace</h1>
+  <div class="link-box">
+    <a class="header-link" [routerLink]="['']">Home</a>
+    <a class="header-link" [routerLink]="['browser']">Browse</a>
+    <!--<a class="header-link" [routerLink]="['create']">Create</a>-->
+    <!--<a class="header-link" [routerLink]="['daily']">Daily</a>-->
+    <a *ngIf='dataService.current_user.active' class="header-link" [routerLink]="['listing']">My Listing</a>
+    <!--<a class="header-link" [routerLink]="['login']">Login</a>-->
+    <!--<a class="header-link" [routerLink]="['register']">Register</a>-->
+    <span *ngIf=(dataService.current_user.active)>Logged in as {{dataService.current_user.username }} | </span>
+    <a *ngIf=(dataService.current_user.active) (click)="dataService.logout()" [routerLink]="['']">Logoff</a>
+  </div>
+  <router-outlet></router-outlet>
+</div>

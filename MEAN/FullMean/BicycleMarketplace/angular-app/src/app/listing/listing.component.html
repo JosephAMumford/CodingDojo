@@ -1,0 +1,41 @@
+<app-create></app-create>
+<div *ngIf='listings'>
+  <h3>Update/Delete Listings</h3>
+  <div>
+    <form id="update-form" #formData='ngForm'>
+      <div *ngFor='let post of listings' class="box">
+        <div class="input-box center">
+          <label >*Image</label>
+          <input size="16" type="string" name="image" value="{{ post.image }}" placeholder="{{ post.image }}" required minlength="4"
+            maxlength="24" [(ngModel)]="listing.image" #image='ngModel' />
+          <div class="image-box">
+            <span>Image</span>
+          </div>
+        </div>
+        <div class="info-box center">
+          <label >*Title</label>
+          <input type="text" size="16" name="title" value="{{post.title}}" placeholder="{{post.title}}" required minlength="4"
+            maxlength="24" [(ngModel)]="listing.title" #title='ngModel' />
+          <label >*Description</label>
+          <input  type="text" size="16" name="description" value="{{ post.description }}" placeholder="{{ post.description }}"
+            required minlength="4" maxlength="200" [(ngModel)]="listing.description" #description='ngModel' />
+        </div>
+        <div class="action-box center">
+          <label  style="width: 100px">*Price</label>
+          <input class="input-width" type="number" name="price" value="{{ post.price }}" placeholder="{{ post.price }}" required min="1"
+            [(ngModel)]="listing.price" #price='ngModel' />
+          <label >*Location</label>
+          <input size="8" type="string" name="location" value="{{ post.location }}" placeholder="{{ post.location }}" required
+            minlength="4" maxlength="24" [(ngModel)]="listing.location" #location='ngModel' />
+        </div>
+        <div class="action-box center">
+          <input type="hidden" name="_id" value="{{ post._id }}" [(ngModel)]="listing._id" #_id='ngModel'>
+          <input type="hidden" name="user_id" value="{{ post.user_id }}" [(ngModel)]="listing.user_id" #user_id='ngModel'>
+          <input *ngIf='formData.valid' (click)='update_listing()' class="form-complete form-submit" type="button" value="Update">
+          <input *ngIf='!formData.valid' class="form-incomplete form-submit" type="button" value="update">
+          <input (click)="dataService.delete_listing(post._id); formData.reset()" class="form-complete form-submit" type="button" value="Delete">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

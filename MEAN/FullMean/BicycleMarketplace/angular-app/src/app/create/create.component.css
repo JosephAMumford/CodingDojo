@@ -1,0 +1,22 @@
+.box {
+  display: inline-block;
+  padding: 5px;
+  width:512px;
+}
+
+.image-box {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+  vertical-align: top;
+}
+
+.info-box {
+  display: inline-block;
+}
+
+.action-box {
+  display: inline-block;
+}
+

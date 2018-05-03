@@ -1,0 +1,38 @@
+<div class="create-box">
+  <form id="registration-form" #formData='ngForm'>
+    <h3>Create New Listing</h3>
+    <div>
+      <label class="label-item">*Title</label>
+      <input class="input-item" type="text" name="title" required minlength="4" maxlength="24" [(ngModel)]="listing.title"
+        #title='ngModel' /><br>
+      <label *ngIf='title.errors && title.dirty' class="error">Required Field: Title must be at least 4 characters</label>
+    </div>
+    <div>
+      <label class="label-item">*Description</label>
+      <input class="input-item" type="text" name="description" required minlength="4" maxlength="200" [(ngModel)]="listing.description"
+        #description='ngModel' /><br>
+      <label *ngIf='description.errors && description.dirty' class="error">Required Field: Description must be at least 4 characters</label>
+    </div>
+    <div>
+      <label class="label-item">*Price</label>
+      <input class="input-item" type="number" name="price" required min="1" [(ngModel)]="listing.price"
+        #price='ngModel' /><br>
+      <label *ngIf='price.errors && price.dirty' class="error">Required Field: Price must be at least $1</label>
+    </div>
+    <div>
+      <label class="label-item">*Location</label>
+      <input class="input-item" type="string" name="location" required minlength="4" maxlength="24" [(ngModel)]="listing.location" #location='ngModel' /><br>
+      <label *ngIf='location.errors && location.dirty' class="error">Required Field: Price must be at least 4 characters</label>
+    </div>
+    <div>
+      <label class="label-item">*Image</label>
+      <input class="input-item" type="string" name="image" required minlength="4" maxlength="24" [(ngModel)]="listing.image"
+        #image='ngModel' /><br>
+      <label *ngIf='image.errors && image.dirty' class="error">Required Field: Image url must be at least 4 characters</label>
+    </div>
+    <div class="center">
+      <input *ngIf='formData.valid' (click)='submit_listing(); formData.reset()' class="form-complete form-submit" type="button" value="Submit">
+      <input *ngIf='!formData.valid' class="form-incomplete form-submit" type="button" value="Submit">
+    </div>
+  </form>
+</div>

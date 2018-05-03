@@ -1,0 +1,20 @@
+<div class="login-box">
+  <form #formData='ngForm'>
+    <h3>Login</h3>
+    <div>
+      <label class="label-item">*Email</label>
+      <input class="input-item" type="text" name="email" required minlength="4" maxlength="24" [(ngModel)]="user.email" #email='ngModel'/><br>
+      <label *ngIf='email.errors && email.dirty' class="error">Required Field: Email must be at least 4 characters</label>
+    </div>
+    <div>
+      <label class="label-item">*Password</label>
+      <input class="input-item" type="password" name="password" required minlength="10" maxlength="24" pattern="^([a-zA-Z0-9@*#]{8,15})$" [(ngModel)]="user.password" #password='ngModel' /><br>
+      <label *ngIf='password.errors && password.dirty' class="error">Required Field: Password must be at least 10 characters</label>
+    </div>
+    <div class="center">
+      <input *ngIf='formData.valid' (click)='login_user(); formData.reset()' class="form-complete form-submit" type="button" value="Login">
+      <input *ngIf='!formData.valid' class="form-incomplete form-submit" type="button" value="Login">
+      <span *ngIf='login_error'>Invalid credentials</span>
+    </div>
+  </form>
+</div>

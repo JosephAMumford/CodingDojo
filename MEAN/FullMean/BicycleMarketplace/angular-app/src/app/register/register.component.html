@@ -1,0 +1,39 @@
+<div class="registration-box">
+  <form #formData='ngForm'>
+    <h3>Register</h3>
+    <div>
+      <label class="label-item">*First Name</label>
+      <input class="input-item" type="text" name="first_name" required minlength="4" maxlength="24" [(ngModel)]="user.first_name"
+        #first_name='ngModel' /><br>
+      <label *ngIf='first_name.errors && first_name.dirty' class="error">Required Field: First name must be at least 4 characters</label>
+    </div>
+    <div>
+      <label class="label-item">*Last Name</label>
+      <input class="input-item" type="text" name="last_name" required minlength="4" maxlength="24" [(ngModel)]="user.last_name"
+        #last_name='ngModel' /><br>
+      <label *ngIf='last_name.errors && last_name.dirty' class="error">Required Field: Last name must be at least 4 characters</label>
+    </div>
+    <div>
+      <label class="label-item">*Email</label>
+      <input class="input-item" type="text" name="email" required minlength="4" maxlength="24" [(ngModel)]="user.email" #email='ngModel'
+      /><br>
+      <label *ngIf='email.errors && email.dirty' class="error">Required Field: Email must be at least 4 characters</label>
+    </div>
+    <div>
+      <label class="label-item">*Password</label>
+      <input class="input-item" type="password" name="password" required minlength="10" maxlength="24" pattern="^([a-zA-Z0-9@*#]{8,15})$"
+        [(ngModel)]="user.password" #password='ngModel' /><br>
+      <label *ngIf='password.errors && password.dirty' class="error">Required Field: Password must be at least 10 characters</label>
+    </div>
+    <div>
+      <label class="label-item">*Confirm Password</label>
+      <input class="input-item" type="password" name="password_confirm" required minlength="10" maxlength="24" ng-pattern="password"
+        [(ngModel)]="user.password_confirm" #password_confirm='ngModel' /><br>
+      <label *ngIf='password_confirm.errors && password_confirm.dirty' class="error">Required Field: Passwords must match</label>
+    </div>
+    <div class="center">
+      <input *ngIf='formData.valid' (click)='register_user(); formData.reset()' class="form-complete form-submit" type="button" value="Register">
+      <input *ngIf='!formData.valid' class="form-incomplete form-submit" type="button" value="Register">
+    </div>
+  </form>
+</div>

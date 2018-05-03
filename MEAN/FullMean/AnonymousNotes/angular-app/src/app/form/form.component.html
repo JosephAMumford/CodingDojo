@@ -1,0 +1,16 @@
+<div class="form-box">
+  <h3>Create Product</h3>
+  <form id="product-form" #formData='ngForm'>
+    <div>
+      <label class="label-item">Note</label>
+      <input class="input-item" type="text" name="name" required minlength="4" maxlength="24" [(ngModel)]="new_item.name" #name='ngModel'/>
+      <label *ngIf='name.errors && name.dirty' class="error">Required Field: Note must be at least 4 characters</label>
+    </div>
+    <div class="center">
+      <input *ngIf='formData.valid' (click)='triggerEvent($event); formData.reset()' class="form-complete form-submit ft-size-12"
+        type="button" value="Create">
+      <input *ngIf='!formData.valid' class="form-incomplete form-submit ft-size-12" type="button" value="Create">
+      <input [routerLink]="['/products']" type="button" class="cancel form-submit ft-size-12" value="Cancel">
+    </div>
+  </form>
+</div>
